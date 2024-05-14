@@ -1,6 +1,10 @@
-mkdir ~/Backup
-mkdir ~/Backup/config
-mkdir ~/Backup/fonts
-cp -rT ~/.config/ ~/Backup/config
-cp -rT ~/.fonts ~/Backup/fonts
-
+sudo rm -rf ./config/
+sudo rm -rf ./fonts
+mkdir ./config
+mkdir ./fonts
+cp -rT ~/.config/ ./config
+cp -rT ~/.fonts ./fonts
+git add .
+git commit -m "Backup Done"
+echo "Backup done"
+git push

@@ -1,0 +1,12 @@
+2024/05/03-15:55:45.936 16b8d Reusing MANIFEST /home/vroomer/.config/google-chrome/Default/IndexedDB/https_www.youtube.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/05/03-15:55:45.937 16b8d Recovering log #12
+2024/05/03-15:55:45.942 16b8d Reusing old log /home/vroomer/.config/google-chrome/Default/IndexedDB/https_www.youtube.com_0.indexeddb.leveldb/000012.log 
+2024/05/03-15:59:54.628 16b8c Level-0 table #17: started
+2024/05/03-15:59:54.645 16b8c Level-0 table #17: 1124744 bytes OK
+2024/05/03-15:59:54.650 16b8c Delete type=0 #12
+2024/05/03-16:00:24.326 16b8d Compacting 1@1 + 1@2 files
+2024/05/03-16:00:24.341 16b8d Generated table #18@1: 703 keys, 48961 bytes
+2024/05/03-16:00:24.341 16b8d Compacted 1@1 + 1@2 files => 48961 bytes
+2024/05/03-16:00:24.343 16b8d compacted to: files[ 0 0 1 0 0 0 0 ]
+2024/05/03-16:00:24.344 16b8d Delete type=2 #17
+2024/05/03-16:00:24.344 16b8d Delete type=2 #14

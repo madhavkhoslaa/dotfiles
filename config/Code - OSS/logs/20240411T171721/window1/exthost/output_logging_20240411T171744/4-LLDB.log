@@ -1,0 +1,546 @@
+Initial debug configuration: {
+  type: 'lldb',
+  request: 'launch',
+  name: 'run redis-starter-rust',
+  program: '${workspaceFolder}/target/debug/redis-starter-rust',
+  args: [],
+  cwd: '${workspaceFolder}',
+  sourceMap: {},
+  sourceLanguages: [ 'rust' ],
+  env: {
+    RUST_BACKTRACE: 'short',
+    CHROME_DESKTOP: 'code-oss.desktop',
+    DBUS_SESSION_BUS_ADDRESS: 'unix:path=/run/user/1000/bus',
+    DEBUGINFOD_URLS: 'https://debuginfod.archlinux.org ',
+    DESKTOP_SESSION: 'i3',
+    DISPLAY: ':0',
+    ELECTRON_NO_ATTACH_CONSOLE: '1',
+    GDK_BACKEND: 'x11',
+    GDMSESSION: 'i3',
+    GTK_MODULES: 'canberra-gtk-module',
+    HOME: '/home/vroomer',
+    I3SOCK: '/run/user/1000/i3/ipc-socket.522',
+    LANG: 'en_US.UTF-8',
+    LOGNAME: 'vroomer',
+    MAIL: '/var/spool/mail/vroomer',
+    MOTD_SHOWN: 'pam',
+    NO_AT_BRIDGE: '1',
+    ORIGINAL_XDG_CURRENT_DESKTOP: 'i3',
+    PATH: '/home/vroomer/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl',
+    PWD: '/home/vroomer',
+    SHELL: '/usr/bin/bash',
+    SHLVL: '0',
+    USER: 'vroomer',
+    VSCODE_AMD_ENTRYPOINT: 'vs/workbench/api/node/extensionHostProcess',
+    VSCODE_CLI: '1',
+    VSCODE_CODE_CACHE_PATH: '/home/vroomer/.config/Code - OSS/CachedData/5c3e652f63e798a5ac2f31ffd0d863669328dc4c',
+    VSCODE_CRASH_REPORTER_PROCESS_TYPE: 'extensionHost',
+    VSCODE_CWD: '/home/vroomer',
+    VSCODE_HANDLES_UNCAUGHT_ERRORS: 'true',
+    VSCODE_IPC_HOOK: '/run/user/1000/vscode-ba031f0f-1.88-main.sock',
+    VSCODE_NLS_CONFIG: '{"locale":"en-us","osLocale":"en-us","availableLanguages":{},"_languagePackSupport":true}',
+    VSCODE_PID: '214540',
+    XAUTHORITY: '/home/vroomer/.Xauthority',
+    XDG_CURRENT_DESKTOP: 'i3',
+    XDG_GREETER_DATA_DIR: '/var/lib/lightdm-data/vroomer',
+    XDG_RUNTIME_DIR: '/run/user/1000',
+    XDG_SEAT: 'seat0',
+    XDG_SEAT_PATH: '/org/freedesktop/DisplayManager/Seat0',
+    XDG_SESSION_CLASS: 'user',
+    XDG_SESSION_DESKTOP: 'i3',
+    XDG_SESSION_ID: '2',
+    XDG_SESSION_PATH: '/org/freedesktop/DisplayManager/Session0',
+    XDG_SESSION_TYPE: 'x11',
+    XDG_VTNR: '7',
+    ELECTRON_RUN_AS_NODE: '1'
+  }
+}
+Resolved debug configuration: {
+  type: 'lldb',
+  request: 'launch',
+  name: 'run redis-starter-rust',
+  program: '${workspaceFolder}/target/debug/redis-starter-rust',
+  args: [],
+  cwd: '${workspaceFolder}',
+  sourceMap: {},
+  sourceLanguages: [ 'rust' ],
+  env: {
+    RUST_BACKTRACE: 'short',
+    CHROME_DESKTOP: 'code-oss.desktop',
+    DBUS_SESSION_BUS_ADDRESS: 'unix:path=/run/user/1000/bus',
+    DEBUGINFOD_URLS: 'https://debuginfod.archlinux.org ',
+    DESKTOP_SESSION: 'i3',
+    DISPLAY: ':0',
+    ELECTRON_NO_ATTACH_CONSOLE: '1',
+    GDK_BACKEND: 'x11',
+    GDMSESSION: 'i3',
+    GTK_MODULES: 'canberra-gtk-module',
+    HOME: '/home/vroomer',
+    I3SOCK: '/run/user/1000/i3/ipc-socket.522',
+    LANG: 'en_US.UTF-8',
+    LOGNAME: 'vroomer',
+    MAIL: '/var/spool/mail/vroomer',
+    MOTD_SHOWN: 'pam',
+    NO_AT_BRIDGE: '1',
+    ORIGINAL_XDG_CURRENT_DESKTOP: 'i3',
+    PATH: '/home/vroomer/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl',
+    PWD: '/home/vroomer',
+    SHELL: '/usr/bin/bash',
+    SHLVL: '0',
+    USER: 'vroomer',
+    VSCODE_AMD_ENTRYPOINT: 'vs/workbench/api/node/extensionHostProcess',
+    VSCODE_CLI: '1',
+    VSCODE_CODE_CACHE_PATH: '/home/vroomer/.config/Code - OSS/CachedData/5c3e652f63e798a5ac2f31ffd0d863669328dc4c',
+    VSCODE_CRASH_REPORTER_PROCESS_TYPE: 'extensionHost',
+    VSCODE_CWD: '/home/vroomer',
+    VSCODE_HANDLES_UNCAUGHT_ERRORS: 'true',
+    VSCODE_IPC_HOOK: '/run/user/1000/vscode-ba031f0f-1.88-main.sock',
+    VSCODE_NLS_CONFIG: '{"locale":"en-us","osLocale":"en-us","availableLanguages":{},"_languagePackSupport":true}',
+    VSCODE_PID: '214540',
+    XAUTHORITY: '/home/vroomer/.Xauthority',
+    XDG_CURRENT_DESKTOP: 'i3',
+    XDG_GREETER_DATA_DIR: '/var/lib/lightdm-data/vroomer',
+    XDG_RUNTIME_DIR: '/run/user/1000',
+    XDG_SEAT: 'seat0',
+    XDG_SEAT_PATH: '/org/freedesktop/DisplayManager/Seat0',
+    XDG_SESSION_CLASS: 'user',
+    XDG_SESSION_DESKTOP: 'i3',
+    XDG_SESSION_ID: '2',
+    XDG_SESSION_PATH: '/org/freedesktop/DisplayManager/Session0',
+    XDG_SESSION_TYPE: 'x11',
+    XDG_VTNR: '7',
+    ELECTRON_RUN_AS_NODE: '1'
+  },
+  relativePathBase: '/home/vroomer/codecrafters-redis-rust',
+  _adapterSettings: {
+    displayFormat: 'auto',
+    showDisassembly: 'auto',
+    dereferencePointers: true,
+    suppressMissingSourceFiles: true,
+    evaluationTimeout: 5,
+    consoleMode: 'commands',
+    sourceLanguages: null,
+    terminalPromptClear: null,
+    evaluateForHovers: true,
+    commandCompletions: true,
+    reproducer: false
+  }
+}
+Initial debug configuration: {
+  type: 'lldb',
+  request: 'launch',
+  name: "Debug executable 'redis-starter-rust'",
+  cargo: {
+    args: [
+      'build',
+      '--bin=redis-starter-rust',
+      '--package=redis-starter-rust'
+    ],
+    filter: { name: 'redis-starter-rust', kind: 'bin' }
+  },
+  args: [],
+  cwd: '${workspaceFolder}',
+  __configurationTarget: 6
+}
+Raw artifacts:
+{
+  fileName: '/home/vroomer/codecrafters-redis-rust/target/debug/redis-starter-rust',
+  name: 'redis-starter-rust',
+  kind: 'bin'
+}
+Filtered artifacts: 
+{
+  fileName: '/home/vroomer/codecrafters-redis-rust/target/debug/redis-starter-rust',
+  name: 'redis-starter-rust',
+  kind: 'bin'
+}
+Resolved debug configuration: {
+  type: 'lldb',
+  request: 'launch',
+  name: "Debug executable 'redis-starter-rust'",
+  args: [],
+  cwd: '${workspaceFolder}',
+  __configurationTarget: 6,
+  relativePathBase: '/home/vroomer/codecrafters-redis-rust',
+  program: '/home/vroomer/codecrafters-redis-rust/target/debug/redis-starter-rust',
+  sourceLanguages: [ 'rust' ],
+  _adapterSettings: {
+    displayFormat: 'auto',
+    showDisassembly: 'auto',
+    dereferencePointers: true,
+    suppressMissingSourceFiles: true,
+    evaluationTimeout: 5,
+    consoleMode: 'commands',
+    sourceLanguages: null,
+    terminalPromptClear: null,
+    evaluateForHovers: true,
+    commandCompletions: true,
+    reproducer: false
+  }
+}
+Debug adapter exit code=0 (0x0), signal=null.
+Initial debug configuration: {
+  type: 'lldb',
+  request: 'launch',
+  name: 'run redis-starter-rust',
+  program: '${workspaceFolder}/target/debug/redis-starter-rust',
+  args: [],
+  cwd: '${workspaceFolder}',
+  sourceMap: {},
+  sourceLanguages: [ 'rust' ],
+  env: {
+    RUST_BACKTRACE: 'short',
+    CHROME_DESKTOP: 'code-oss.desktop',
+    DBUS_SESSION_BUS_ADDRESS: 'unix:path=/run/user/1000/bus',
+    DEBUGINFOD_URLS: 'https://debuginfod.archlinux.org ',
+    DESKTOP_SESSION: 'i3',
+    DISPLAY: ':0',
+    ELECTRON_NO_ATTACH_CONSOLE: '1',
+    GDK_BACKEND: 'x11',
+    GDMSESSION: 'i3',
+    GTK_MODULES: 'canberra-gtk-module',
+    HOME: '/home/vroomer',
+    I3SOCK: '/run/user/1000/i3/ipc-socket.522',
+    LANG: 'en_US.UTF-8',
+    LOGNAME: 'vroomer',
+    MAIL: '/var/spool/mail/vroomer',
+    MOTD_SHOWN: 'pam',
+    NO_AT_BRIDGE: '1',
+    ORIGINAL_XDG_CURRENT_DESKTOP: 'i3',
+    PATH: '/home/vroomer/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl',
+    PWD: '/home/vroomer',
+    SHELL: '/usr/bin/bash',
+    SHLVL: '0',
+    USER: 'vroomer',
+    VSCODE_AMD_ENTRYPOINT: 'vs/workbench/api/node/extensionHostProcess',
+    VSCODE_CLI: '1',
+    VSCODE_CODE_CACHE_PATH: '/home/vroomer/.config/Code - OSS/CachedData/5c3e652f63e798a5ac2f31ffd0d863669328dc4c',
+    VSCODE_CRASH_REPORTER_PROCESS_TYPE: 'extensionHost',
+    VSCODE_CWD: '/home/vroomer',
+    VSCODE_HANDLES_UNCAUGHT_ERRORS: 'true',
+    VSCODE_IPC_HOOK: '/run/user/1000/vscode-ba031f0f-1.88-main.sock',
+    VSCODE_NLS_CONFIG: '{"locale":"en-us","osLocale":"en-us","availableLanguages":{},"_languagePackSupport":true}',
+    VSCODE_PID: '214540',
+    XAUTHORITY: '/home/vroomer/.Xauthority',
+    XDG_CURRENT_DESKTOP: 'i3',
+    XDG_GREETER_DATA_DIR: '/var/lib/lightdm-data/vroomer',
+    XDG_RUNTIME_DIR: '/run/user/1000',
+    XDG_SEAT: 'seat0',
+    XDG_SEAT_PATH: '/org/freedesktop/DisplayManager/Seat0',
+    XDG_SESSION_CLASS: 'user',
+    XDG_SESSION_DESKTOP: 'i3',
+    XDG_SESSION_ID: '2',
+    XDG_SESSION_PATH: '/org/freedesktop/DisplayManager/Session0',
+    XDG_SESSION_TYPE: 'x11',
+    XDG_VTNR: '7',
+    ELECTRON_RUN_AS_NODE: '1'
+  }
+}
+Resolved debug configuration: {
+  type: 'lldb',
+  request: 'launch',
+  name: 'run redis-starter-rust',
+  program: '${workspaceFolder}/target/debug/redis-starter-rust',
+  args: [],
+  cwd: '${workspaceFolder}',
+  sourceMap: {},
+  sourceLanguages: [ 'rust' ],
+  env: {
+    RUST_BACKTRACE: 'short',
+    CHROME_DESKTOP: 'code-oss.desktop',
+    DBUS_SESSION_BUS_ADDRESS: 'unix:path=/run/user/1000/bus',
+    DEBUGINFOD_URLS: 'https://debuginfod.archlinux.org ',
+    DESKTOP_SESSION: 'i3',
+    DISPLAY: ':0',
+    ELECTRON_NO_ATTACH_CONSOLE: '1',
+    GDK_BACKEND: 'x11',
+    GDMSESSION: 'i3',
+    GTK_MODULES: 'canberra-gtk-module',
+    HOME: '/home/vroomer',
+    I3SOCK: '/run/user/1000/i3/ipc-socket.522',
+    LANG: 'en_US.UTF-8',
+    LOGNAME: 'vroomer',
+    MAIL: '/var/spool/mail/vroomer',
+    MOTD_SHOWN: 'pam',
+    NO_AT_BRIDGE: '1',
+    ORIGINAL_XDG_CURRENT_DESKTOP: 'i3',
+    PATH: '/home/vroomer/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl',
+    PWD: '/home/vroomer',
+    SHELL: '/usr/bin/bash',
+    SHLVL: '0',
+    USER: 'vroomer',
+    VSCODE_AMD_ENTRYPOINT: 'vs/workbench/api/node/extensionHostProcess',
+    VSCODE_CLI: '1',
+    VSCODE_CODE_CACHE_PATH: '/home/vroomer/.config/Code - OSS/CachedData/5c3e652f63e798a5ac2f31ffd0d863669328dc4c',
+    VSCODE_CRASH_REPORTER_PROCESS_TYPE: 'extensionHost',
+    VSCODE_CWD: '/home/vroomer',
+    VSCODE_HANDLES_UNCAUGHT_ERRORS: 'true',
+    VSCODE_IPC_HOOK: '/run/user/1000/vscode-ba031f0f-1.88-main.sock',
+    VSCODE_NLS_CONFIG: '{"locale":"en-us","osLocale":"en-us","availableLanguages":{},"_languagePackSupport":true}',
+    VSCODE_PID: '214540',
+    XAUTHORITY: '/home/vroomer/.Xauthority',
+    XDG_CURRENT_DESKTOP: 'i3',
+    XDG_GREETER_DATA_DIR: '/var/lib/lightdm-data/vroomer',
+    XDG_RUNTIME_DIR: '/run/user/1000',
+    XDG_SEAT: 'seat0',
+    XDG_SEAT_PATH: '/org/freedesktop/DisplayManager/Seat0',
+    XDG_SESSION_CLASS: 'user',
+    XDG_SESSION_DESKTOP: 'i3',
+    XDG_SESSION_ID: '2',
+    XDG_SESSION_PATH: '/org/freedesktop/DisplayManager/Session0',
+    XDG_SESSION_TYPE: 'x11',
+    XDG_VTNR: '7',
+    ELECTRON_RUN_AS_NODE: '1'
+  },
+  relativePathBase: '/home/vroomer/codecrafters-redis-rust',
+  _adapterSettings: {
+    displayFormat: 'auto',
+    showDisassembly: 'auto',
+    dereferencePointers: true,
+    suppressMissingSourceFiles: true,
+    evaluationTimeout: 5,
+    consoleMode: 'commands',
+    sourceLanguages: null,
+    terminalPromptClear: null,
+    evaluateForHovers: true,
+    commandCompletions: true,
+    reproducer: false
+  }
+}
+Debug adapter exit code=0 (0x0), signal=null.
+Debug adapter exit code=0 (0x0), signal=null.
+Initial debug configuration: {
+  type: 'lldb',
+  request: 'launch',
+  name: "Debug executable 'redis-starter-rust'",
+  cargo: {
+    args: [
+      'build',
+      '--bin=redis-starter-rust',
+      '--package=redis-starter-rust'
+    ],
+    filter: { name: 'redis-starter-rust', kind: 'bin' }
+  },
+  args: [],
+  cwd: '${workspaceFolder}',
+  __configurationTarget: 6
+}
+Raw artifacts:
+{
+  fileName: '/home/vroomer/codecrafters-redis-rust/target/debug/redis-starter-rust',
+  name: 'redis-starter-rust',
+  kind: 'bin'
+}
+Filtered artifacts: 
+{
+  fileName: '/home/vroomer/codecrafters-redis-rust/target/debug/redis-starter-rust',
+  name: 'redis-starter-rust',
+  kind: 'bin'
+}
+Resolved debug configuration: {
+  type: 'lldb',
+  request: 'launch',
+  name: "Debug executable 'redis-starter-rust'",
+  args: [],
+  cwd: '${workspaceFolder}',
+  __configurationTarget: 6,
+  relativePathBase: '/home/vroomer/codecrafters-redis-rust',
+  program: '/home/vroomer/codecrafters-redis-rust/target/debug/redis-starter-rust',
+  sourceLanguages: [ 'rust' ],
+  _adapterSettings: {
+    displayFormat: 'auto',
+    showDisassembly: 'auto',
+    dereferencePointers: true,
+    suppressMissingSourceFiles: true,
+    evaluationTimeout: 5,
+    consoleMode: 'commands',
+    sourceLanguages: null,
+    terminalPromptClear: null,
+    evaluateForHovers: true,
+    commandCompletions: true,
+    reproducer: false
+  }
+}
+[ERROR codelldb::debug_session] Received invalid thread id in stack trace request.
+[ERROR codelldb::debug_session] Internal debugger error: Invalid thread id.
+[ERROR codelldb::debug_session] Internal debugger error: Invalid frame reference: 1023
+Debug adapter exit code=0 (0x0), signal=null.
+Debug adapter exit code=0 (0x0), signal=null.
+[ERROR codelldb::debug_session] Internal debugger error: Invalid frame reference: 1001
+Debug adapter exit code=0 (0x0), signal=null.
+Debug adapter exit code=0 (0x0), signal=null.
+Debug adapter exit code=0 (0x0), signal=null.
+ERROR(Python) 17:26:04 codelldb: Traceback (most recent call last):
+  File "/home/vroomer/.vscode-oss/extensions/vadimcn.vscode-lldb-1.10.0-universal/adapter/scripts/codelldb/codelldb.py", line 175, in evaluate
+    value = evaluate_in_context(pycode, is_simple_expr, context)
+  File "/home/vroomer/.vscode-oss/extensions/vadimcn.vscode-lldb-1.10.0-universal/adapter/scripts/codelldb/codelldb.py", line 320, in evaluate_in_context
+    return eval(code, eval_globals, eval_locals)
+  File "<input>", line 1, in <module>
+  File "/home/vroomer/.vscode-oss/extensions/vadimcn.vscode-lldb-1.10.0-universal/adapter/scripts/codelldb/codelldb.py", line 309, in <lambda>
+    eval_globals['__eval'] = lambda expr: nat_eval(frame, expr)
+  File "/home/vroomer/.vscode-oss/extensions/vadimcn.vscode-lldb-1.10.0-universal/adapter/scripts/codelldb/codelldb.py", line 300, in nat_eval
+    raise Exception(err.GetCString())
+Exception: error: could not find decl "Parse"
+
+
+[ERROR codelldb::debug_session] error: could not find decl "Parse"
+    
+Debug adapter exit code=0 (0x0), signal=null.
+ERROR(Python) 17:27:37 codelldb: Traceback (most recent call last):
+  File "/home/vroomer/.vscode-oss/extensions/vadimcn.vscode-lldb-1.10.0-universal/adapter/scripts/codelldb/codelldb.py", line 175, in evaluate
+    value = evaluate_in_context(pycode, is_simple_expr, context)
+  File "/home/vroomer/.vscode-oss/extensions/vadimcn.vscode-lldb-1.10.0-universal/adapter/scripts/codelldb/codelldb.py", line 320, in evaluate_in_context
+    return eval(code, eval_globals, eval_locals)
+  File "<input>", line 1, in <module>
+  File "/home/vroomer/.vscode-oss/extensions/vadimcn.vscode-lldb-1.10.0-universal/adapter/scripts/codelldb/codelldb.py", line 309, in <lambda>
+    eval_globals['__eval'] = lambda expr: nat_eval(frame, expr)
+  File "/home/vroomer/.vscode-oss/extensions/vadimcn.vscode-lldb-1.10.0-universal/adapter/scripts/codelldb/codelldb.py", line 300, in nat_eval
+    raise Exception(err.GetCString())
+Exception: error: could not find item
+
+
+[ERROR codelldb::debug_session] error: could not find item
+    
+Debug adapter exit code=0 (0x0), signal=null.
+ERROR(Python) 17:27:55 codelldb: Traceback (most recent call last):
+  File "/home/vroomer/.vscode-oss/extensions/vadimcn.vscode-lldb-1.10.0-universal/adapter/scripts/codelldb/codelldb.py", line 175, in evaluate
+    value = evaluate_in_context(pycode, is_simple_expr, context)
+  File "/home/vroomer/.vscode-oss/extensions/vadimcn.vscode-lldb-1.10.0-universal/adapter/scripts/codelldb/codelldb.py", line 320, in evaluate_in_context
+    return eval(code, eval_globals, eval_locals)
+  File "<input>", line 1, in <module>
+  File "/home/vroomer/.vscode-oss/extensions/vadimcn.vscode-lldb-1.10.0-universal/adapter/scripts/codelldb/codelldb.py", line 309, in <lambda>
+    eval_globals['__eval'] = lambda expr: nat_eval(frame, expr)
+  File "/home/vroomer/.vscode-oss/extensions/vadimcn.vscode-lldb-1.10.0-universal/adapter/scripts/codelldb/codelldb.py", line 300, in nat_eval
+    raise Exception(err.GetCString())
+Exception: error: could not find item
+
+
+[ERROR codelldb::debug_session] error: could not find item
+    
+ERROR(Python) 17:27:57 codelldb: Traceback (most recent call last):
+  File "/home/vroomer/.vscode-oss/extensions/vadimcn.vscode-lldb-1.10.0-universal/adapter/scripts/codelldb/codelldb.py", line 175, in evaluate
+    value = evaluate_in_context(pycode, is_simple_expr, context)
+  File "/home/vroomer/.vscode-oss/extensions/vadimcn.vscode-lldb-1.10.0-universal/adapter/scripts/codelldb/codelldb.py", line 320, in evaluate_in_context
+    return eval(code, eval_globals, eval_locals)
+  File "<input>", line 1, in <module>
+  File "/home/vroomer/.vscode-oss/extensions/vadimcn.vscode-lldb-1.10.0-universal/adapter/scripts/codelldb/codelldb.py", line 309, in <lambda>
+    eval_globals['__eval'] = lambda expr: nat_eval(frame, expr)
+  File "/home/vroomer/.vscode-oss/extensions/vadimcn.vscode-lldb-1.10.0-universal/adapter/scripts/codelldb/codelldb.py", line 300, in nat_eval
+    raise Exception(err.GetCString())
+Exception: error: could not find decl "get_command"
+
+
+[ERROR codelldb::debug_session] error: could not find decl "get_command"
+    
+Debug adapter exit code=0 (0x0), signal=null.
+[ERROR codelldb::debug_session] Received invalid thread id in stack trace request.
+[ERROR codelldb::debug_session] Internal debugger error: Invalid thread id.
+Debug adapter exit code=0 (0x0), signal=null.
+Initial debug configuration: {
+  type: 'lldb',
+  request: 'launch',
+  name: "Debug executable 'redis-starter-rust'",
+  cargo: {
+    args: [
+      'build',
+      '--bin=redis-starter-rust',
+      '--package=redis-starter-rust'
+    ],
+    filter: { name: 'redis-starter-rust', kind: 'bin' }
+  },
+  args: [],
+  cwd: '${workspaceFolder}',
+  __configurationTarget: 6
+}
+Raw artifacts:
+{
+  fileName: '/home/vroomer/codecrafters-redis-rust/target/debug/redis-starter-rust',
+  name: 'redis-starter-rust',
+  kind: 'bin'
+}
+Filtered artifacts: 
+{
+  fileName: '/home/vroomer/codecrafters-redis-rust/target/debug/redis-starter-rust',
+  name: 'redis-starter-rust',
+  kind: 'bin'
+}
+Resolved debug configuration: {
+  type: 'lldb',
+  request: 'launch',
+  name: "Debug executable 'redis-starter-rust'",
+  args: [],
+  cwd: '${workspaceFolder}',
+  __configurationTarget: 6,
+  relativePathBase: '/home/vroomer/codecrafters-redis-rust',
+  program: '/home/vroomer/codecrafters-redis-rust/target/debug/redis-starter-rust',
+  sourceLanguages: [ 'rust' ],
+  _adapterSettings: {
+    displayFormat: 'auto',
+    showDisassembly: 'auto',
+    dereferencePointers: true,
+    suppressMissingSourceFiles: true,
+    evaluationTimeout: 5,
+    consoleMode: 'commands',
+    sourceLanguages: null,
+    terminalPromptClear: null,
+    evaluateForHovers: true,
+    commandCompletions: true,
+    reproducer: false
+  }
+}
+Debug adapter exit code=0 (0x0), signal=null.
+Initial debug configuration: {
+  type: 'lldb',
+  request: 'launch',
+  name: "Debug executable 'redis-starter-rust'",
+  cargo: {
+    args: [
+      'build',
+      '--bin=redis-starter-rust',
+      '--package=redis-starter-rust'
+    ],
+    filter: { name: 'redis-starter-rust', kind: 'bin' }
+  },
+  args: [],
+  cwd: '${workspaceFolder}',
+  __configurationTarget: 6
+}
+Raw artifacts:
+{
+  fileName: '/home/vroomer/codecrafters-redis-rust/target/debug/redis-starter-rust',
+  name: 'redis-starter-rust',
+  kind: 'bin'
+}
+Filtered artifacts: 
+{
+  fileName: '/home/vroomer/codecrafters-redis-rust/target/debug/redis-starter-rust',
+  name: 'redis-starter-rust',
+  kind: 'bin'
+}
+Resolved debug configuration: {
+  type: 'lldb',
+  request: 'launch',
+  name: "Debug executable 'redis-starter-rust'",
+  args: [],
+  cwd: '${workspaceFolder}',
+  __configurationTarget: 6,
+  relativePathBase: '/home/vroomer/codecrafters-redis-rust',
+  program: '/home/vroomer/codecrafters-redis-rust/target/debug/redis-starter-rust',
+  sourceLanguages: [ 'rust' ],
+  _adapterSettings: {
+    displayFormat: 'auto',
+    showDisassembly: 'auto',
+    dereferencePointers: true,
+    suppressMissingSourceFiles: true,
+    evaluationTimeout: 5,
+    consoleMode: 'commands',
+    sourceLanguages: null,
+    terminalPromptClear: null,
+    evaluateForHovers: true,
+    commandCompletions: true,
+    reproducer: false
+  }
+}
+[ERROR codelldb::debug_session] Internal debugger error: Invalid variabes reference: 1048
+[ERROR codelldb::debug_session] Internal debugger error: Invalid frame reference: 1001
+Debug adapter exit code=0 (0x0), signal=null.

@@ -1,3 +1,6 @@
-
 [Default Applications]
 x-scheme-handler/notion=notion-app.desktop
+x-scheme-handler/postman=Postman.desktop
+
+[Added Associations]
+application/pdf=org.pwmt.zathura-pdf-poppler.desktop;

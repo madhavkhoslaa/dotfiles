@@ -1,0 +1,7 @@
+2024-04-20T18:01:35.225612Z ERROR rust_analyzer::config: failed to find any projects in [AbsPathBuf("/home/vroomer/Documents/TradeAPi")]
+2024-04-20T18:01:35.226764Z ERROR rust_analyzer::main_loop: FetchWorkspaceError:
+rust-analyzer failed to discover workspace
+2024-04-20T18:01:35.238014Z ERROR rust_analyzer::main_loop: FetchWorkspaceError:
+rust-analyzer failed to discover workspace
+2024-04-20T18:01:38.912351Z ERROR rust_analyzer::main_loop: FetchWorkspaceError:
+rust-analyzer failed to discover workspace

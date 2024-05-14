@@ -1,0 +1,13 @@
+[
+  { "lbs": "Weight" },
+  { "kgs": "Weight" },
+  { "cms": "Height" },
+  { "metres": "Height" },
+  { "RPE": "Effort" },
+  { "RIR": "Effort" }
+]
+
+[
+  "Weight": ["lbs", "kgs"],
+  "Height": "cms"
+]

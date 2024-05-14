@@ -1,0 +1,12 @@
+{
+  "_id": "de1a687c-0c54-4dba-ac42-13ceb1504d81",
+  "connectionInfo": {
+    "id": "de1a687c-0c54-4dba-ac42-13ceb1504d81",
+    "connectionOptions": {
+      "connectionString": "mongodb+srv://Dev@cluster0.grcadro.mongodb.net/",
+      "oidc": {}
+    },
+    "lastUsed": "2024-01-13T10:32:52.680Z"
+  },
+  "version": 1
+}

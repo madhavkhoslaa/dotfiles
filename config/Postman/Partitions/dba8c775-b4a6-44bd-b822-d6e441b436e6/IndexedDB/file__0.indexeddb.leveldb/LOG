@@ -1,0 +1,6 @@
+2024/01/15-23:23:41.333 12d7 Creating DB /home/vroomer/.config/Postman/Partitions/dba8c775-b4a6-44bd-b822-d6e441b436e6/IndexedDB/file__0.indexeddb.leveldb since it was missing.
+2024/01/15-23:23:41.339 12d7 Reusing MANIFEST /home/vroomer/.config/Postman/Partitions/dba8c775-b4a6-44bd-b822-d6e441b436e6/IndexedDB/file__0.indexeddb.leveldb/MANIFEST-000001
+2024/01/15-23:23:41.347 1300 Level-0 table #5: started
+2024/01/15-23:23:41.349 1300 Level-0 table #5: 492 bytes OK
+2024/01/15-23:23:41.357 1300 Delete type=0 #3
+2024/01/15-23:23:41.357 1300 Manual compaction at level-0 from '\x00\x01\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x02\x00\x00\x00' @ 0 : 0; will stop at (end)

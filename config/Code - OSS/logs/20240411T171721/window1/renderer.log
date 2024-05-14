@@ -1,0 +1,15 @@
+2024-04-11 17:17:23.942 [info] Started local extension host with pid 214633.
+2024-04-11 17:17:27.105 [info] [perf] Render performance baseline is 31ms
+2024-04-11 17:17:32.653 [info] Started local extension host with pid 214833.
+2024-04-11 17:17:32.694 [error] Error: The editor could not be opened because the file was not found.
+    at R.gc (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:2355:28131)
+    at async R.setInput (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:2355:27187)
+    at async r.S (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:2353:24784)
+    at async r.L (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:2353:23348)
+    at async r.openEditor (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:2353:22337)
+    at async vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:2476:24162
+2024-04-11 17:17:35.491 [info] [perf] Render performance baseline is 30ms
+2024-04-11 17:17:43.922 [warning] [backup tracker] suspended, ignoring dirty change event file:///home/vroomer/codecrafters-bittorrent-rust/Cargo.toml 
+2024-04-11 17:17:44.475 [info] Started local extension host with pid 215843.
+2024-04-11 17:17:47.144 [info] [perf] Render performance baseline is 29ms
+2024-04-11 17:28:14.478 [error] No expression to evaluate

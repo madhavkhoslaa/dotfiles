@@ -1,0 +1,6 @@
+2024/05/02-22:45:43.631 16b95 Reusing MANIFEST /home/vroomer/.config/google-chrome/Default/shared_proto_db/MANIFEST-000001
+2024/05/02-22:45:43.631 16b95 Recovering log #3
+2024/05/02-22:45:43.648 16b95 Reusing old log /home/vroomer/.config/google-chrome/Default/shared_proto_db/000003.log 
+2024/05/02-22:45:56.049 16b91 Level-0 table #5: started
+2024/05/02-22:45:56.054 16b91 Level-0 table #5: 112369 bytes OK
+2024/05/02-22:45:56.059 16b91 Delete type=0 #3

@@ -1,0 +1,13 @@
+{
+  "filter": {
+    "id": {
+      "$oid": "65d91b89465c035543c40cdf"
+    }
+  },
+  "_ns": "PeriodizeApp.exercises",
+  "_host": "cluster0.grcadro.mongodb.net",
+  "_id": "eda55346-199f-46f8-b65d-0c136609bc39",
+  "_lastExecuted": {
+    "$date": "2024-02-23T23:54:37.980Z"
+  }
+}

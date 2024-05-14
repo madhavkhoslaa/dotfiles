@@ -1,0 +1,6 @@
+{
+  "version": 2,
+  "rewrites": [{ "source": "/(.*)" }],
+  "framework": "expressjs",
+  "installCommand": "npm install"
+}
