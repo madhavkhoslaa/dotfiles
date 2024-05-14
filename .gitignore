@@ -1,6 +1,6 @@
-/config/google-chrome/*
-/config/notion-app/
-/config/discord/
-/config/google-chrome/
-/config/systemd/
-/config/obsidian/
+config/google-chrome/*
+config/notion-app/
+config/discord/
+config/google-chrome/
+config/systemd/
+config/obsidian/
