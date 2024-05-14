@@ -1,0 +1,41 @@
+2024-05-06 00:58:46.603 [info] Log level: Info
+2024-05-06 00:58:46.603 [info] Validating found git in: "git"
+2024-05-06 00:58:46.603 [info] Using git "2.45.0" from "git"
+2024-05-06 00:58:46.603 [info] > git rev-parse --show-toplevel [5ms]
+2024-05-06 00:58:46.603 [info] > git rev-parse --git-dir --git-common-dir [59ms]
+2024-05-06 00:58:46.603 [info] Open repository: /home/vroomer/go-jek
+2024-05-06 00:58:46.604 [info] > git rev-parse --show-toplevel [6ms]
+2024-05-06 00:58:46.605 [info] > git config --get commit.template [9ms]
+2024-05-06 00:58:46.621 [info] > git rev-parse --show-toplevel [5ms]
+2024-05-06 00:58:46.624 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [5ms]
+2024-05-06 00:58:46.628 [warning] ENOENT: no such file or directory, open '/home/vroomer/go-jek/.git/refs/remotes/origin/master'
+2024-05-06 00:58:46.629 [info] > git rev-parse --show-toplevel [5ms]
+2024-05-06 00:58:46.629 [info] > git rev-parse refs/remotes/origin/master [1ms]
+2024-05-06 00:58:46.637 [info] > git status -z -uall [4ms]
+2024-05-06 00:58:46.638 [info] > git rev-parse --show-toplevel [2ms]
+2024-05-06 00:58:46.654 [info] > git merge-base refs/heads/master refs/remotes/origin/master [12ms]
+2024-05-06 00:58:46.660 [info] > git rev-list --count --left-right refs/heads/master...refs/remotes/origin/master [2ms]
+2024-05-06 00:58:46.664 [info] > git config --get commit.template [10ms]
+2024-05-06 00:58:46.664 [info] > git rev-parse --show-toplevel [14ms]
+2024-05-06 00:58:46.669 [info] > git diff --name-status -z --diff-filter=ADMR fb861fce0719c775ebdd04ce188e2cf1d829fceb...refs/remotes/origin/master [5ms]
+2024-05-06 00:58:46.673 [info] > git rev-parse --show-toplevel [5ms]
+2024-05-06 00:58:46.674 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [2ms]
+2024-05-06 00:58:46.685 [warning] ENOENT: no such file or directory, open '/home/vroomer/go-jek/.git/refs/remotes/origin/master'
+2024-05-06 00:58:46.687 [info] > git rev-parse refs/remotes/origin/master [2ms]
+2024-05-06 00:58:46.692 [info] > git status -z -uall [2ms]
+2024-05-06 00:58:46.902 [info] > git show --textconv :src/main/java/com/gojek/parkingLot/ParkingLot.java [4ms]
+2024-05-06 00:58:46.902 [info] > git ls-files --stage -- /home/vroomer/go-jek/src/main/java/com/gojek/parkingLot/ParkingLot.java [1ms]
+2024-05-06 00:58:46.906 [info] > git cat-file -s 6c980325468f63e9a59280c02a3ad1b45dfc66fd [1ms]
+2024-05-06 00:58:47.063 [info] > git check-ignore -v -z --stdin [5ms]
+2024-05-06 00:58:54.685 [info] > git check-ignore -v -z --stdin [2ms]
+2024-05-06 00:58:54.855 [info] > git show --textconv :src/main/java/com/gojek/mainApplication/GoJekApplication.java [8ms]
+2024-05-06 00:58:54.857 [info] > git ls-files --stage -- /home/vroomer/go-jek/src/main/java/com/gojek/mainApplication/GoJekApplication.java [3ms]
+2024-05-06 00:58:54.863 [info] > git cat-file -s 44bd65358db2c2e84f82e740e86e14c4a2faa78b [2ms]
+2024-05-06 00:59:34.529 [info] > git show --textconv :src/main/java/com/gojek/parser/Parser.java [9ms]
+2024-05-06 00:59:34.531 [info] > git ls-files --stage -- /home/vroomer/go-jek/src/main/java/com/gojek/parser/Parser.java [3ms]
+2024-05-06 00:59:34.541 [info] > git cat-file -s f094a8a5625cfc5ace542a2af118b465b6788bb5 [3ms]
+2024-05-06 01:11:05.419 [info] > git config --get commit.template [6ms]
+2024-05-06 01:11:05.419 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [2ms]
+2024-05-06 01:11:05.424 [warning] ENOENT: no such file or directory, open '/home/vroomer/go-jek/.git/refs/remotes/origin/master'
+2024-05-06 01:11:05.425 [info] > git rev-parse refs/remotes/origin/master [1ms]
+2024-05-06 01:11:05.430 [info] > git status -z -uall [2ms]

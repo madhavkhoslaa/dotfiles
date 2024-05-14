@@ -1,0 +1,587 @@
+<project version="4">
+  <component name="BookmarksManager">
+    <option name="groups">
+      <GroupState>
+        <option name="name" value="go-jek" />
+      </GroupState>
+    </option>
+  </component>
+  <component name="FileEditorManager">
+    <leaf ideFingerprint="12jkgmmulvfs7" SIDE_TABS_SIZE_LIMIT_KEY="-1">
+      <file current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider editor-type-id="text-editor" selected="true">
+            <state relative-caret-position="726">
+              <caret line="33" column="3" selection-start-line="33" selection-start-column="3" selection-end-line="33" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/unitTests/GetSlotNumberFromColorTest.java">
+          <provider editor-type-id="text-editor" selected="true">
+            <state relative-caret-position="88">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/unitTests/GetSlotNumberFromRegistrationTest.java">
+          <provider editor-type-id="text-editor" selected="true">
+            <state relative-caret-position="88">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/unitTests/LeaveCarParkingTest.java">
+          <provider editor-type-id="text-editor" selected="true">
+            <state relative-caret-position="748">
+              <caret line="41" selection-start-line="41" selection-end-line="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/unitTests/StatusTests.java">
+          <provider editor-type-id="text-editor" selected="true">
+            <state relative-caret-position="88">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/gojek/constants/GoJekConstants.java">
+          <provider editor-type-id="text-editor" selected="true">
+            <state relative-caret-position="44">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/gojek/constants/LeaveEnum.java">
+          <provider editor-type-id="text-editor" selected="true">
+            <state relative-caret-position="110">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file>
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/gojek/mainApplication/GoJekApplication.java">
+          <provider editor-type-id="text-editor" selected="true">
+            <state relative-caret-position="396">
+              <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/gojek/parkingLot/ParkingLot.java">
+          <provider editor-type-id="text-editor" selected="true">
+            <state relative-caret-position="1188">
+              <caret line="54" column="44" selection-start-line="54" selection-start-column="34" selection-end-line="54" selection-end-column="44" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/gojek/parser/InputCommandParser.java">
+          <provider editor-type-id="text-editor" selected="true">
+            <state relative-caret-position="440">
+              <caret line="28" column="17" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="17" />
+              <folding>
+                <element signature="docComment;method#populateDataInMap#0;class#InputCommandParser#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTypeUsageLocalSummary"><![CDATA[{
+  "data": {
+    "JAVA": {
+      "usageCount": 79,
+      "lastUsed": 1714983090757
+    },
+    "PLAIN_TEXT": {
+      "usageCount": 1,
+      "lastUsed": 1714669312094
+    },
+    "XML": {
+      "usageCount": 2,
+      "lastUsed": 1714924074580
+    },
+    "CLASS": {
+      "usageCount": 1,
+      "lastUsed": 1714669449019
+    },
+    "Markdown": {
+      "usageCount": 8,
+      "lastUsed": 1714983089626
+    }
+  }
+}]]></component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find />
+      <find>Allocated slot number</find>
+    </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$/src/main/java/com/gojek/service</dir>
+    </dirStrings>
+  </component>
+  <component name="FindInProjectScope">
+    <option name="isProjectScope" value="true" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <changedPaths>
+      <option value="$PROJECT_DIR$/src/test/java/unitTests/GetRegistrationFromColorTest.java" />
+    </changedPaths>
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="$PROJECT_DIR$/.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="LanguageUsageStatistics">
+    <language id="JAVA">
+      <summary usageCount="79" lastUsage="1714983090757" />
+    </language>
+    <language id="Markdown">
+      <summary usageCount="8" lastUsage="1714983089626" />
+    </language>
+    <language id="TEXT">
+      <summary usageCount="1" lastUsage="1714669312094" />
+    </language>
+    <language id="XML">
+      <summary usageCount="2" lastUsage="1714924074580" />
+    </language>
+  </component>
+  <component name="MavenProjectNavigator">
+    <option name="groupStructurally" value="true" />
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="e529d0c5:RootNode" />
+          <item name="gojek" type="20da4fc8:ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="e529d0c5:RootNode" />
+          <item name="gojek" type="20da4fc8:ProjectNode" />
+          <item name="Lifecycle" type="d32bdb1e:LifecycleNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" />
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="go-jek" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dir{file:///home/vroomer/go-jek}" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="go-jek" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dir{file:///home/vroomer/go-jek}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/go-jek/bin}" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="go-jek" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dir{file:///home/vroomer/go-jek}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/go-jek/src}" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="go-jek" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dir{file:///home/vroomer/go-jek}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/go-jek/src}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/go-jek/src/main}" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="go-jek" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dir{file:///home/vroomer/go-jek}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/go-jek/src}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/go-jek/src/main}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/go-jek/src/main/java}" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="go-jek" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dir{file:///home/vroomer/go-jek}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/go-jek/src}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/go-jek/src/main}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/go-jek/src/main/java}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/go-jek/src/main/java/com/gojek}" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="go-jek" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dir{file:///home/vroomer/go-jek}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/go-jek/src}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/go-jek/src/main}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/go-jek/src/main/java}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/go-jek/src/main/java/com/gojek}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/go-jek/src/main/java/com/gojek/constants}" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="go-jek" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dir{file:///home/vroomer/go-jek}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/go-jek/src}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/go-jek/src/main}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/go-jek/src/main/java}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/go-jek/src/main/java/com/gojek}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/go-jek/src/main/java/com/gojek/mainApplication}" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="go-jek" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dir{file:///home/vroomer/go-jek}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/go-jek/src}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/go-jek/src/main}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/go-jek/src/main/java}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/go-jek/src/main/java/com/gojek}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/go-jek/src/main/java/com/gojek/parkingLot}" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="go-jek" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dir{file:///home/vroomer/go-jek}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/go-jek/src}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/go-jek/src/main}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/go-jek/src/main/java}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/go-jek/src/main/java/com/gojek}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/go-jek/src/main/java/com/gojek/parser}" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="go-jek" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dir{file:///home/vroomer/go-jek}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/go-jek/src}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/go-jek/src/main}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/go-jek/src/main/java}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/go-jek/src/main/java/com/gojek}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/go-jek/src/main/java/com/gojek/service}" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="go-jek" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dir{file:///home/vroomer/go-jek}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/go-jek/src}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/go-jek/src/main}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/go-jek/src/main/java}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/go-jek/src/main/java/com/gojek}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/go-jek/src/main/java/com/gojek/vehicle}" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="go-jek" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dir{file:///home/vroomer/go-jek}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/go-jek/src}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/go-jek/src/test}" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="go-jek" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dir{file:///home/vroomer/go-jek}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/go-jek/src}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/go-jek/src/test}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/go-jek/src/test/java}" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="go-jek" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dir{file:///home/vroomer/go-jek}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/go-jek/src}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/go-jek/src/test}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/go-jek/src/test/java}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/go-jek/src/test/java/unitTests}" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="ReaderModeSettings">
+    <option name="showLigatures" value="true" />
+  </component>
+  <component name="RunConfigurationStartHistory">
+    <history>
+      <element setting="Application.GoJekApplication" />
+    </history>
+  </component>
+  <component name="TerminalArrangementManager">
+    <option name="myTabStates">
+      <TerminalTabState tabName="RunMarkdown" currentWorkingDirectory="$PROJECT_DIR$" commandHistoryFileName="go-jek-history">
+        <shellCommand>
+          <arg value="/usr/bin/bash" />
+          <arg value="-i" />
+        </shellCommand>
+      </TerminalTabState>
+    </option>
+  </component>
+  <component name="ToolWindowManager">
+    <layoutV2>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22286013" />
+      <window_info id="Commit" order="1" weight="0.25" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="0" />
+      <window_info anchor="bottom" id="Problems" order="1" />
+      <window_info anchor="bottom" id="Problems View" order="2" />
+      <window_info anchor="bottom" id="Terminal" order="3" weight="0.15439618" />
+      <window_info anchor="bottom" id="Run" order="4" show_stripe_button="false" weight="0.15439618" />
+      <window_info anchor="bottom" id="Services" order="5" />
+      <window_info anchor="bottom" id="Build" order="6" />
+      <window_info anchor="bottom" id="Debug" order="7" weight="0.27814886" />
+      <window_info anchor="right" content_ui="combo" id="Notifications" order="0" weight="0.25" />
+      <window_info anchor="right" id="AIAssistant" order="1" weight="0.25" />
+      <window_info anchor="right" id="Database" order="2" weight="0.25" />
+      <window_info anchor="right" id="Gradle" order="3" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="4" weight="0.3297706" />
+      <unified_weights bottom="0.15439618" left="0.22286013" right="0.3297706" />
+    </layoutV2>
+    <recentWindows>
+      <value>Project</value>
+      <value>Run</value>
+      <value>Terminal</value>
+      <value>Maven</value>
+      <value>Debug</value>
+    </recentWindows>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1805" y="601" key="FileChooserDialogImpl" timestamp="1714983103210">
+      <screen x="1080" y="314" width="1920" height="1080" />
+    </state>
+    <state x="1805" y="601" key="FileChooserDialogImpl/1080.314.1920.1080/0.0.1080.1920@1080.314.1920.1080" timestamp="1714983103210" />
+    <state width="1012" height="259" key="GridCell.Tab.0.bottom.ideScale=125" timestamp="1714936476484">
+      <screen x="0" y="0" width="1080" height="1920" />
+    </state>
+    <state width="1012" height="259" key="GridCell.Tab.0.bottom.ideScale=125/1080.362.1920.1080/0.0.1080.1920@0.0.1080.1920" timestamp="1714936476484" />
+    <state width="1852" height="259" key="GridCell.Tab.0.bottom.ideScale=125/1080.469.1920.1080/0.0.1080.1920@1080.469.1920.1080" timestamp="1714688462459" />
+    <state width="1786" height="227" key="GridCell.Tab.0.bottom.ideScale=200" timestamp="1714669475895">
+      <screen x="1080" y="469" width="1920" height="1080" />
+    </state>
+    <state width="1786" height="227" key="GridCell.Tab.0.bottom.ideScale=200/1080.469.1920.1080/0.0.1080.1920@1080.469.1920.1080" timestamp="1714669475895" />
+    <state width="1012" height="259" key="GridCell.Tab.0.center.ideScale=125" timestamp="1714936476484">
+      <screen x="0" y="0" width="1080" height="1920" />
+    </state>
+    <state width="1012" height="259" key="GridCell.Tab.0.center.ideScale=125/1080.362.1920.1080/0.0.1080.1920@0.0.1080.1920" timestamp="1714936476484" />
+    <state width="1852" height="259" key="GridCell.Tab.0.center.ideScale=125/1080.469.1920.1080/0.0.1080.1920@1080.469.1920.1080" timestamp="1714688462457" />
+    <state width="1786" height="227" key="GridCell.Tab.0.center.ideScale=200" timestamp="1714669475894">
+      <screen x="1080" y="469" width="1920" height="1080" />
+    </state>
+    <state width="1786" height="227" key="GridCell.Tab.0.center.ideScale=200/1080.469.1920.1080/0.0.1080.1920@1080.469.1920.1080" timestamp="1714669475894" />
+    <state width="1012" height="259" key="GridCell.Tab.0.left.ideScale=125" timestamp="1714936476484">
+      <screen x="0" y="0" width="1080" height="1920" />
+    </state>
+    <state width="1012" height="259" key="GridCell.Tab.0.left.ideScale=125/1080.362.1920.1080/0.0.1080.1920@0.0.1080.1920" timestamp="1714936476484" />
+    <state width="1852" height="259" key="GridCell.Tab.0.left.ideScale=125/1080.469.1920.1080/0.0.1080.1920@1080.469.1920.1080" timestamp="1714688462457" />
+    <state width="1786" height="227" key="GridCell.Tab.0.left.ideScale=200" timestamp="1714669475894">
+      <screen x="1080" y="469" width="1920" height="1080" />
+    </state>
+    <state width="1786" height="227" key="GridCell.Tab.0.left.ideScale=200/1080.469.1920.1080/0.0.1080.1920@1080.469.1920.1080" timestamp="1714669475894" />
+    <state width="1012" height="259" key="GridCell.Tab.0.right.ideScale=125" timestamp="1714936476484">
+      <screen x="0" y="0" width="1080" height="1920" />
+    </state>
+    <state width="1012" height="259" key="GridCell.Tab.0.right.ideScale=125/1080.362.1920.1080/0.0.1080.1920@0.0.1080.1920" timestamp="1714936476484" />
+    <state width="1852" height="259" key="GridCell.Tab.0.right.ideScale=125/1080.469.1920.1080/0.0.1080.1920@1080.469.1920.1080" timestamp="1714688462458" />
+    <state width="1786" height="227" key="GridCell.Tab.0.right.ideScale=200" timestamp="1714669475894">
+      <screen x="1080" y="469" width="1920" height="1080" />
+    </state>
+    <state width="1786" height="227" key="GridCell.Tab.0.right.ideScale=200/1080.469.1920.1080/0.0.1080.1920@1080.469.1920.1080" timestamp="1714669475894" />
+    <state width="1852" height="259" key="GridCell.Tab.1.bottom.ideScale=125" timestamp="1714688430068">
+      <screen x="1080" y="469" width="1920" height="1080" />
+    </state>
+    <state width="1852" height="259" key="GridCell.Tab.1.bottom.ideScale=125/1080.469.1920.1080/0.0.1080.1920@1080.469.1920.1080" timestamp="1714688430068" />
+    <state width="1852" height="259" key="GridCell.Tab.1.center.ideScale=125" timestamp="1714688430065">
+      <screen x="1080" y="469" width="1920" height="1080" />
+    </state>
+    <state width="1852" height="259" key="GridCell.Tab.1.center.ideScale=125/1080.469.1920.1080/0.0.1080.1920@1080.469.1920.1080" timestamp="1714688430065" />
+    <state width="1852" height="259" key="GridCell.Tab.1.left.ideScale=125" timestamp="1714688430063">
+      <screen x="1080" y="469" width="1920" height="1080" />
+    </state>
+    <state width="1852" height="259" key="GridCell.Tab.1.left.ideScale=125/1080.469.1920.1080/0.0.1080.1920@1080.469.1920.1080" timestamp="1714688430063" />
+    <state width="1852" height="259" key="GridCell.Tab.1.right.ideScale=125" timestamp="1714688430067">
+      <screen x="1080" y="469" width="1920" height="1080" />
+    </state>
+    <state width="1852" height="259" key="GridCell.Tab.1.right.ideScale=125/1080.469.1920.1080/0.0.1080.1920@1080.469.1920.1080" timestamp="1714688430067" />
+    <state x="1179" y="280" width="1577" height="1080" key="SettingsEditor" timestamp="1714937833756">
+      <screen x="1080" y="362" width="1920" height="1080" />
+    </state>
+    <state x="-3" y="487" width="1080" height="1417" key="SettingsEditor.ideScale=110" timestamp="1714937621196">
+      <screen x="0" y="0" width="1080" height="1920" />
+    </state>
+    <state x="-3" y="487" width="1080" height="1417" key="SettingsEditor.ideScale=110/1080.362.1920.1080/0.0.1080.1920@1080.362.1920.1080" timestamp="1714937621196" />
+    <state x="0" y="437" width="1802" height="1080" key="SettingsEditor.ideScale=125" timestamp="1714688032393">
+      <screen x="0" y="0" width="1080" height="1920" />
+    </state>
+    <state x="0" y="437" width="1802" height="1080" key="SettingsEditor.ideScale=125/1080.469.1920.1080/0.0.1080.1920@1080.469.1920.1080" timestamp="1714688032393" />
+    <state x="1179" y="280" width="1577" height="1080" key="SettingsEditor/1080.362.1920.1080/0.0.1080.1920@1080.362.1920.1080" timestamp="1714937833756" />
+    <state x="1781" y="621" width="656" height="810" key="find.popup.ideScale=125" timestamp="1714688528691">
+      <screen x="1080" y="469" width="1920" height="1080" />
+    </state>
+    <state x="1781" y="621" width="656" height="810" key="find.popup.ideScale=125/1080.469.1920.1080/0.0.1080.1920@1080.469.1920.1080" timestamp="1714688528691" />
+    <state x="139" y="619" width="800" height="665" key="new project wizard.ideScale=125" timestamp="1714925535290">
+      <screen x="0" y="0" width="1080" height="1920" />
+    </state>
+    <state x="139" y="619" width="800" height="665" key="new project wizard.ideScale=125/1080.362.1920.1080/0.0.1080.1920@0.0.1080.1920" timestamp="1714925535290" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/bin/setup">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jrt:///usr/lib/jvm/java-17-openjdk!/java.base/java/lang/Class.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="730" column="18" selection-start-line="730" selection-start-column="18" selection-end-line="730" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gojek/parser/Parser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/unitTests/CarParkTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/unitTests/GetRegistrationFromColorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="18" selection-start-line="17" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gojek/vehicle/Car.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gojek/service/ParkingService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="56" column="50" selection-start-line="56" selection-start-column="50" selection-end-line="56" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gojek/vehicle/Vehicle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="726">
+          <caret line="33" column="3" selection-start-line="33" selection-start-column="3" selection-end-line="33" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/unitTests/GetSlotNumberFromColorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/unitTests/GetSlotNumberFromRegistrationTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/unitTests/LeaveCarParkingTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/unitTests/StatusTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gojek/constants/GoJekConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gojek/constants/LeaveEnum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gojek/parkingLot/ParkingLot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1188">
+          <caret line="54" column="44" selection-start-line="54" selection-start-column="34" selection-end-line="54" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gojek/parser/InputCommandParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="28" column="17" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="17" />
+          <folding>
+            <element signature="docComment;method#populateDataInMap#0;class#InputCommandParser#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gojek/mainApplication/GoJekApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

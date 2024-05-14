@@ -1,0 +1,110 @@
+2024-04-13 13:53:42.476 [info] Default formatter is set to esbenp.prettier-vscode for workspace /home/vroomer/codecrafters-redis-rust
+2024-04-13 13:53:42.476 [error] Unable to check if shell integration is active [Error: Extension 'ms-python.python' CANNOT use API proposal: terminalDataWriteEvent.
+Its package.json#enabledApiProposals-property declares:  but NOT terminalDataWriteEvent.
+ The missing proposal MUST be added and you must start in extension development mode or use the following command line switch: --enable-proposed-api ms-python.python
+	at C (/usr/lib/code/out/vs/workbench/api/node/extensionHostProcess.js:140:50961)
+	at a.onDidWriteTerminalData (/usr/lib/code/out/vs/workbench/api/node/extensionHostProcess.js:162:32771)
+	at new g (/home/vroomer/.vscode-oss/extensions/ms-python.python-2024.4.1-universal/out/client/extension.js:2:746998)
+	at t.resolveInstance (/home/vroomer/.vscode-oss/extensions/ms-python.python-2024.4.1-universal/out/client/extension.js:2:2007385)
+	at /home/vroomer/.vscode-oss/extensions/ms-python.python-2024.4.1-universal/out/client/extension.js:2:2009293
+	at Array.map (<anonymous>)
+	at t.resolveInstance (/home/vroomer/.vscode-oss/extensions/ms-python.python-2024.4.1-universal/out/client/extension.js:2:2007159)
+	at /home/vroomer/.vscode-oss/extensions/ms-python.python-2024.4.1-universal/out/client/extension.js:2:2009293
+	at t.resolve (/home/vroomer/.vscode-oss/extensions/ms-python.python-2024.4.1-universal/out/client/extension.js:2:2009556)
+	at /home/vroomer/.vscode-oss/extensions/ms-python.python-2024.4.1-universal/out/client/extension.js:2:1993119
+	at e._get (/home/vroomer/.vscode-oss/extensions/ms-python.python-2024.4.1-universal/out/client/extension.js:2:1992885)
+	at e.get (/home/vroomer/.vscode-oss/extensions/ms-python.python-2024.4.1-universal/out/client/extension.js:2:1991597)
+	at e.dynamicValue (/home/vroomer/.vscode-oss/extensions/ms-python.python-2024.4.1-universal/out/client/extension.js:2:2014661)
+	at /home/vroomer/.vscode-oss/extensions/ms-python.python-2024.4.1-universal/out/client/extension.js:2:2008782
+	at c (/home/vroomer/.vscode-oss/extensions/ms-python.python-2024.4.1-universal/out/client/extension.js:2:2007828)
+	at /home/vroomer/.vscode-oss/extensions/ms-python.python-2024.4.1-universal/out/client/extension.js:2:2008722
+	at /home/vroomer/.vscode-oss/extensions/ms-python.python-2024.4.1-universal/out/client/extension.js:2:2008241
+	at Array.map (<anonymous>)
+	at /home/vroomer/.vscode-oss/extensions/ms-python.python-2024.4.1-universal/out/client/extension.js:2:2008213
+	at Array.map (<anonymous>)
+	at t.resolveInstance (/home/vroomer/.vscode-oss/extensions/ms-python.python-2024.4.1-universal/out/client/extension.js:2:2007159)
+	at /home/vroomer/.vscode-oss/extensions/ms-python.python-2024.4.1-universal/out/client/extension.js:2:2009293
+	at t.resolve (/home/vroomer/.vscode-oss/extensions/ms-python.python-2024.4.1-universal/out/client/extension.js:2:2009556)
+	at /home/vroomer/.vscode-oss/extensions/ms-python.python-2024.4.1-universal/out/client/extension.js:2:1993119
+	at e._get (/home/vroomer/.vscode-oss/extensions/ms-python.python-2024.4.1-universal/out/client/extension.js:2:1992885)
+	at e.get (/home/vroomer/.vscode-oss/extensions/ms-python.python-2024.4.1-universal/out/client/extension.js:2:1991597)
+	at a.get (/home/vroomer/.vscode-oss/extensions/ms-python.python-2024.4.1-universal/out/client/extension.js:2:463338)
+	at /home/vroomer/.vscode-oss/extensions/ms-python.python-2024.4.1-universal/out/client/extension.js:2:384002
+	at async t.activateComponents (/home/vroomer/.vscode-oss/extensions/ms-python.python-2024.4.1-universal/out/client/extension.js:2:382289)
+	at async /home/vroomer/.vscode-oss/extensions/ms-python.python-2024.4.1-universal/out/client/extension.js:2:2928053
+	at async e (/home/vroomer/.vscode-oss/extensions/ms-python.python-2024.4.1-universal/out/client/extension.js:2:2927585)
+	at async o.n (/usr/lib/code/out/vs/workbench/api/node/extensionHostProcess.js:142:6237)
+	at async o.m (/usr/lib/code/out/vs/workbench/api/node/extensionHostProcess.js:142:6200)
+	at async o.l (/usr/lib/code/out/vs/workbench/api/node/extensionHostProcess.js:142:5657)]
+2024-04-13 13:53:42.476 [info] Test server listening.
+2024-04-13 13:53:42.476 [info] > conda info --json
+2024-04-13 13:53:42.476 [info] > hatch env show --json
+2024-04-13 13:53:42.476 [info] cwd: .
+2024-04-13 13:53:42.476 [info] > pyenv which python
+2024-04-13 13:53:42.476 [info] cwd: .
+2024-04-13 13:53:42.477 [info] Found: /bin/python --> /bin/python3.11
+2024-04-13 13:53:42.478 [info] Found: /bin/python3 --> /bin/python3.11
+2024-04-13 13:53:42.479 [info] Found: /bin/python3.11 --> /bin/python3.11
+2024-04-13 13:53:42.491 [info] Found: /sbin/python --> /sbin/python3.11
+2024-04-13 13:53:42.491 [info] Found: /sbin/python3 --> /sbin/python3.11
+2024-04-13 13:53:42.491 [info] Found: /sbin/python3.11 --> /sbin/python3.11
+2024-04-13 13:53:42.494 [info] Found: /usr/bin/python --> /usr/bin/python3.11
+2024-04-13 13:53:42.494 [info] Found: /usr/bin/python3 --> /usr/bin/python3.11
+2024-04-13 13:53:42.494 [info] Found: /usr/bin/python3.11 --> /usr/bin/python3.11
+2024-04-13 13:53:42.510 [info] Found: /usr/sbin/python --> /usr/sbin/python3.11
+2024-04-13 13:53:42.510 [info] Found: /usr/sbin/python3 --> /usr/sbin/python3.11
+2024-04-13 13:53:42.510 [info] Found: /usr/sbin/python3.11 --> /usr/sbin/python3.11
+2024-04-13 13:53:42.520 [info] > /bin/python -I ~/.vscode-oss/extensions/ms-python.python-2024.4.1-universal/python_files/get_output_via_markers.py ~/.vscode-oss/extensions/ms-python.python-2024.4.1-universal/python_files/interpreterInfo.py
+2024-04-13 13:53:42.527 [info] > /sbin/python -I ~/.vscode-oss/extensions/ms-python.python-2024.4.1-universal/python_files/get_output_via_markers.py ~/.vscode-oss/extensions/ms-python.python-2024.4.1-universal/python_files/interpreterInfo.py
+2024-04-13 13:53:42.554 [info] > /usr/bin/python -I ~/.vscode-oss/extensions/ms-python.python-2024.4.1-universal/python_files/get_output_via_markers.py ~/.vscode-oss/extensions/ms-python.python-2024.4.1-universal/python_files/interpreterInfo.py
+2024-04-13 13:53:42.559 [info] > /usr/sbin/python -I ~/.vscode-oss/extensions/ms-python.python-2024.4.1-universal/python_files/get_output_via_markers.py ~/.vscode-oss/extensions/ms-python.python-2024.4.1-universal/python_files/interpreterInfo.py
+2024-04-13 13:53:42.593 [error] [
+  'Failed to activate a workspace, Class name = g, completed in 209ms, has a falsy return value, Arg 1: <Uri:/home/vroomer/codecrafters-redis-rust>, Arg 2: {"started":1712996622346}, Return Value: undefined',
+  [Error: Extension 'ms-python.python' CANNOT use API proposal: testObserver.
+  Its package.json#enabledApiProposals-property declares:  but NOT testObserver.
+   The missing proposal MUST be added and you must start in extension development mode or use the following command line switch: --enable-proposed-api ms-python.python
+  	at C (/usr/lib/code/out/vs/workbench/api/node/extensionHostProcess.js:140:50961)
+  	at get testResults [as testResults] (/usr/lib/code/out/vs/workbench/api/node/extensionHostProcess.js:162:25476)
+  	at T.activate (/home/vroomer/.vscode-oss/extensions/ms-python.python-2024.4.1-universal/out/client/extension.js:2:775617)
+  	at /home/vroomer/.vscode-oss/extensions/ms-python.python-2024.4.1-universal/out/client/extension.js:2:2460
+  	at Array.map (<anonymous>)
+  	at g.activateWorkspace (/home/vroomer/.vscode-oss/extensions/ms-python.python-2024.4.1-universal/out/client/extension.js:2:2450)]
+]
+2024-04-13 13:53:42.593 [error] Failure during activation. [Error: Extension 'ms-python.python' CANNOT use API proposal: testObserver.
+Its package.json#enabledApiProposals-property declares:  but NOT testObserver.
+ The missing proposal MUST be added and you must start in extension development mode or use the following command line switch: --enable-proposed-api ms-python.python
+	at C (/usr/lib/code/out/vs/workbench/api/node/extensionHostProcess.js:140:50961)
+	at get testResults [as testResults] (/usr/lib/code/out/vs/workbench/api/node/extensionHostProcess.js:162:25476)
+	at T.activate (/home/vroomer/.vscode-oss/extensions/ms-python.python-2024.4.1-universal/out/client/extension.js:2:775617)
+	at /home/vroomer/.vscode-oss/extensions/ms-python.python-2024.4.1-universal/out/client/extension.js:2:2460
+	at Array.map (<anonymous>)
+	at g.activateWorkspace (/home/vroomer/.vscode-oss/extensions/ms-python.python-2024.4.1-universal/out/client/extension.js:2:2450)]
+2024-04-13 13:53:42.593 [error] sendStartupTelemetry() failed. [Error: Extension 'ms-python.python' CANNOT use API proposal: testObserver.
+Its package.json#enabledApiProposals-property declares:  but NOT testObserver.
+ The missing proposal MUST be added and you must start in extension development mode or use the following command line switch: --enable-proposed-api ms-python.python
+	at C (/usr/lib/code/out/vs/workbench/api/node/extensionHostProcess.js:140:50961)
+	at get testResults [as testResults] (/usr/lib/code/out/vs/workbench/api/node/extensionHostProcess.js:162:25476)
+	at T.activate (/home/vroomer/.vscode-oss/extensions/ms-python.python-2024.4.1-universal/out/client/extension.js:2:775617)
+	at /home/vroomer/.vscode-oss/extensions/ms-python.python-2024.4.1-universal/out/client/extension.js:2:2460
+	at Array.map (<anonymous>)
+	at g.activateWorkspace (/home/vroomer/.vscode-oss/extensions/ms-python.python-2024.4.1-universal/out/client/extension.js:2:2450)]
+2024-04-13 13:53:42.601 [info] Python interpreter path: /bin/python
+2024-04-13 13:53:43.565 [info] Starting Jedi language server for codecrafters-redis-rust.
+2024-04-13 13:54:06.143 [info] Discover tests for workspace name: codecrafters-redis-rust - uri: /home/vroomer/codecrafters-redis-rust/src/command/Untitled-1.py
+2024-04-13 13:54:20.578 [info] Send text to terminal:  /bin/python /home/vroomer/.vscode-oss/extensions/ms-python.debugpy-2024.4.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 59245 -- /home/vroomer/codecrafters-redis-rust/src/command/Untitled-1.py 
+2024-04-13 13:54:32.960 [info] CreateEnv Trigger - Skipping for /home/vroomer/codecrafters-redis-rust/src/command/Untitled-1.py
+2024-04-13 13:54:33.057 [info] Send text to terminal: /bin/python /home/vroomer/codecrafters-redis-rust/src/command/Untitled-1.py
+2024-04-13 13:54:38.014 [info] Send text to terminal: 
+2024-04-13 13:54:38.014 [info] Send text to terminal:  cd /home/vroomer/codecrafters-redis-rust ; /bin/python /home/vroomer/.vscode-oss/extensions/ms-python.debugpy-2024.4.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 54511 -- /home/vroomer/codecrafters-redis-rust/src/command/Untitled-1.py 
+2024-04-13 13:55:37.543 [info] Discover tests for workspace name: codecrafters-redis-rust - uri: /home/vroomer/codecrafters-redis-rust/src/command/Untitled-1.py
+2024-04-13 13:55:38.894 [info] Send text to terminal:  /bin/python /home/vroomer/.vscode-oss/extensions/ms-python.debugpy-2024.4.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 52855 -- /home/vroomer/codecrafters-redis-rust/src/command/Untitled-1.py 
+2024-04-13 13:55:41.394 [info] Send text to terminal:  /bin/python /home/vroomer/.vscode-oss/extensions/ms-python.debugpy-2024.4.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 58423 -- /home/vroomer/codecrafters-redis-rust/src/command/Untitled-1.py 
+2024-04-13 13:55:45.236 [info] Send text to terminal: 
+2024-04-13 13:55:45.236 [info] Send text to terminal:  cd /home/vroomer/codecrafters-redis-rust ; /bin/python /home/vroomer/.vscode-oss/extensions/ms-python.debugpy-2024.4.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 57865 -- /home/vroomer/codecrafters-redis-rust/src/command/Untitled-1.py 
+2024-04-13 14:11:39.014 [info] Send text to terminal: 
+2024-04-13 14:11:39.014 [info] Send text to terminal:  cd /home/vroomer/codecrafters-redis-rust ; /bin/python /home/vroomer/.vscode-oss/extensions/ms-python.debugpy-2024.4.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 33443 -- /home/vroomer/codecrafters-redis-rust/src/command/Untitled-1.py 
+2024-04-13 14:11:39.061 [info] Discover tests for workspace name: codecrafters-redis-rust - uri: /home/vroomer/codecrafters-redis-rust/src/command/Untitled-1.py
+2024-04-13 14:15:25.754 [info] Discover tests for workspace name: codecrafters-redis-rust - uri: /home/vroomer/codecrafters-redis-rust/src/command/Untitled-1.py
+2024-04-13 14:15:56.957 [info] Discover tests for workspace name: codecrafters-redis-rust - uri: /home/vroomer/codecrafters-redis-rust/src/command/Untitled-1.py
+2024-04-13 14:16:11.313 [info] Discover tests for workspace name: codecrafters-redis-rust - uri: /home/vroomer/codecrafters-redis-rust/src/command/Untitled-1.py
+2024-04-13 14:16:43.730 [info] Discover tests for workspace name: codecrafters-redis-rust - uri: /home/vroomer/codecrafters-redis-rust/src/command/Untitled-1.py

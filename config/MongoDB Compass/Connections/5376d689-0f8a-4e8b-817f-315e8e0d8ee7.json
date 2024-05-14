@@ -1,0 +1,12 @@
+{
+  "_id": "5376d689-0f8a-4e8b-817f-315e8e0d8ee7",
+  "connectionInfo": {
+    "id": "5376d689-0f8a-4e8b-817f-315e8e0d8ee7",
+    "connectionOptions": {
+      "connectionString": "mongodb+srv://Dev@cluster0.grcadro.mongodb.net/PeriodizeApp",
+      "oidc": {}
+    },
+    "lastUsed": "2024-04-05T20:55:51.923Z"
+  },
+  "version": 1
+}

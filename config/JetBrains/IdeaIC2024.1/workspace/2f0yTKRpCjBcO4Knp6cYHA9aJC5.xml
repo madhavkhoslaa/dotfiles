@@ -1,0 +1,390 @@
+<project version="4">
+  <component name="BookmarksManager">
+    <option name="groups">
+      <GroupState>
+        <option name="name" value="untitled" />
+      </GroupState>
+    </option>
+  </component>
+  <component name="FileEditorManager">
+    <leaf ideFingerprint="12jkgmmulvfs7" SIDE_TABS_SIZE_LIMIT_KEY="-1">
+      <file>
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/example/Solution.java">
+          <provider editor-type-id="text-editor" selected="true">
+            <state relative-caret-position="253">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file current-in-tab="false">
+        <entry file="jrt:///usr/lib/jvm/java-17-openjdk!/java.base/java/util/Arrays.class">
+          <provider editor-type-id="text-editor" selected="true" />
+        </entry>
+      </file>
+      <file current-in-tab="false">
+        <entry file="jrt:///usr/lib/jvm/java-17-openjdk!/java.base/java/lang/ArrayIndexOutOfBoundsException.class">
+          <provider editor-type-id="text-editor" selected="true">
+            <state relative-caret-position="92">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider editor-type-id="text-editor" selected="true" />
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTypeUsageLocalSummary"><![CDATA[{
+  "data": {
+    "JAVA": {
+      "usageCount": 8,
+      "lastUsed": 1714635807343
+    },
+    "XML": {
+      "usageCount": 8,
+      "lastUsed": 1714635812755
+    },
+    "CLASS": {
+      "usageCount": 11,
+      "lastUsed": 1714635812722
+    }
+  }
+}]]></component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find />
+    </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <changedPaths>
+      <option value="$PROJECT_DIR$/src/main/java/org/example/Main.java" />
+      <option value="$PROJECT_DIR$/src/main/java/org/example/Pair.java" />
+      <option value="$PROJECT_DIR$/src/main/java/org/example/Solution.java" />
+    </changedPaths>
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="$PROJECT_DIR$/.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="LanguageUsageStatistics">
+    <language id="JAVA">
+      <summary usageCount="8" lastUsage="1714635807345" />
+    </language>
+    <language id="XML">
+      <summary usageCount="8" lastUsage="1714635812755" />
+    </language>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand />
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" />
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="untitled" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dir{file:///home/vroomer/IdeaProjects/untitled}" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="untitled" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dir{file:///home/vroomer/IdeaProjects/untitled}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/IdeaProjects/untitled/src}" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="untitled" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dir{file:///home/vroomer/IdeaProjects/untitled}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/IdeaProjects/untitled/src}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/IdeaProjects/untitled/src/main}" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="untitled" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dir{file:///home/vroomer/IdeaProjects/untitled}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/IdeaProjects/untitled/src}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/IdeaProjects/untitled/src/main}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/IdeaProjects/untitled/src/main/java}" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="untitled" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dir{file:///home/vroomer/IdeaProjects/untitled}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/IdeaProjects/untitled/src}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/IdeaProjects/untitled/src/main}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/IdeaProjects/untitled/src/main/java}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/vroomer/IdeaProjects/untitled/src/main/java/org/example}" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="RunConfigurationStartHistory">
+    <history>
+      <element setting="Application.org.example.Solution" />
+      <element setting="Application.Solution" />
+      <element setting="Application.Main (1)" />
+      <element setting="Application.Main" />
+    </history>
+  </component>
+  <component name="TerminalArrangementManager">
+    <option name="myTabStates">
+      <TerminalTabState tabName="Local" currentWorkingDirectory="$PROJECT_DIR$" commandHistoryFileName="untitled-history">
+        <shellCommand>
+          <arg value="/usr/bin/bash" />
+          <arg value="-i" />
+        </shellCommand>
+      </TerminalTabState>
+    </option>
+  </component>
+  <component name="ToolWindowManager">
+    <layoutV2>
+      <window_info content_ui="combo" id="Project" order="0" weight="0.33998144" />
+      <window_info id="Commit" order="1" weight="0.25" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="0" />
+      <window_info anchor="bottom" id="Problems" order="1" />
+      <window_info anchor="bottom" id="Problems View" order="2" />
+      <window_info anchor="bottom" id="Terminal" order="3" weight="0.329714" />
+      <window_info anchor="bottom" id="Run" order="4" show_stripe_button="false" weight="0.329714" />
+      <window_info anchor="bottom" id="Services" order="5" />
+      <window_info anchor="bottom" id="Build" order="6" weight="0.329714" />
+      <window_info anchor="bottom" id="Debug" order="7" show_stripe_button="false" weight="0.329714" />
+      <window_info anchor="right" content_ui="combo" id="Notifications" order="0" weight="0.25" />
+      <window_info anchor="right" id="AIAssistant" order="1" weight="0.25" />
+      <window_info anchor="right" id="Database" order="2" weight="0.25" />
+      <window_info anchor="right" id="Gradle" order="3" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="4" weight="0.25" />
+      <unified_weights bottom="0.329714" left="0.33998144" />
+    </layoutV2>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" weight="0.29267162" />
+      <window_info id="Commit" order="1" weight="0.25" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="0" />
+      <window_info anchor="bottom" id="Problems" order="1" />
+      <window_info anchor="bottom" id="Problems View" order="2" />
+      <window_info anchor="bottom" id="Terminal" order="3" weight="0.329714" />
+      <window_info anchor="bottom" id="Run" order="4" visible="true" weight="0.329714" />
+      <window_info anchor="bottom" id="Services" order="5" />
+      <window_info anchor="bottom" id="Build" order="6" weight="0.329714" />
+      <window_info anchor="bottom" id="Debug" order="7" weight="0.329714" />
+      <window_info anchor="right" content_ui="combo" id="Notifications" order="0" weight="0.25" />
+      <window_info anchor="right" id="AIAssistant" order="1" weight="0.25" />
+      <window_info anchor="right" id="Database" order="2" weight="0.25" />
+      <window_info anchor="right" id="Gradle" order="3" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="4" weight="0.25" />
+      <unified_weights bottom="0.329714" left="0.29267162" />
+    </layout-to-restore>
+    <recentWindows>
+      <value>Debug</value>
+      <value>Run</value>
+      <value>Project</value>
+      <value>Build</value>
+      <value>Terminal</value>
+    </recentWindows>
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="377" height="262" key="DebuggerActiveHint.ideScale=200" timestamp="1714560405554">
+      <screen x="0" y="0" width="1080" height="1920" />
+    </state>
+    <state width="377" height="262" key="DebuggerActiveHint.ideScale=200/1080.244.1920.1080/0.0.1080.1920@0.0.1080.1920" timestamp="1714560405554" />
+    <state width="876" height="313" key="GridCell.Tab.0.bottom" timestamp="1712956013898">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1852" height="323" key="GridCell.Tab.0.bottom.ideScale=125" timestamp="1713023206726">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1852" height="323" key="GridCell.Tab.0.bottom.ideScale=125/0.0.1920.1080@0.0.1920.1080" timestamp="1713023206726" />
+    <state width="978" height="574" key="GridCell.Tab.0.bottom.ideScale=150" timestamp="1714214356364">
+      <screen x="0" y="0" width="1080" height="1920" />
+    </state>
+    <state width="1818" height="307" key="GridCell.Tab.0.bottom.ideScale=150/0.0.1920.1080@0.0.1920.1080" timestamp="1713023726523" />
+    <state width="978" height="574" key="GridCell.Tab.0.bottom.ideScale=150/1080.220.1920.1080/0.0.1080.1920@0.0.1080.1920" timestamp="1714214356364" />
+    <state width="946" height="558" key="GridCell.Tab.0.bottom.ideScale=200" timestamp="1714669034885">
+      <screen x="0" y="0" width="1080" height="1920" />
+    </state>
+    <state width="946" height="558" key="GridCell.Tab.0.bottom.ideScale=200/1080.220.1920.1080/0.0.1080.1920@0.0.1080.1920" timestamp="1714311226471" />
+    <state width="946" height="558" key="GridCell.Tab.0.bottom.ideScale=200/1080.244.1920.1080/0.0.1080.1920@0.0.1080.1920" timestamp="1714561276394" />
+    <state width="946" height="558" key="GridCell.Tab.0.bottom.ideScale=200/1080.469.1920.1080/0.0.1080.1920@0.0.1080.1920" timestamp="1714669034885" />
+    <state width="876" height="313" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1712956013898" />
+    <state width="876" height="313" key="GridCell.Tab.0.center" timestamp="1712956013897">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1852" height="323" key="GridCell.Tab.0.center.ideScale=125" timestamp="1713023206725">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1852" height="323" key="GridCell.Tab.0.center.ideScale=125/0.0.1920.1080@0.0.1920.1080" timestamp="1713023206725" />
+    <state width="978" height="574" key="GridCell.Tab.0.center.ideScale=150" timestamp="1714214356363">
+      <screen x="0" y="0" width="1080" height="1920" />
+    </state>
+    <state width="1818" height="307" key="GridCell.Tab.0.center.ideScale=150/0.0.1920.1080@0.0.1920.1080" timestamp="1713023726523" />
+    <state width="978" height="574" key="GridCell.Tab.0.center.ideScale=150/1080.220.1920.1080/0.0.1080.1920@0.0.1080.1920" timestamp="1714214356363" />
+    <state width="946" height="558" key="GridCell.Tab.0.center.ideScale=200" timestamp="1714669034885">
+      <screen x="0" y="0" width="1080" height="1920" />
+    </state>
+    <state width="946" height="558" key="GridCell.Tab.0.center.ideScale=200/1080.220.1920.1080/0.0.1080.1920@0.0.1080.1920" timestamp="1714311226468" />
+    <state width="946" height="558" key="GridCell.Tab.0.center.ideScale=200/1080.244.1920.1080/0.0.1080.1920@0.0.1080.1920" timestamp="1714561276393" />
+    <state width="946" height="558" key="GridCell.Tab.0.center.ideScale=200/1080.469.1920.1080/0.0.1080.1920@0.0.1080.1920" timestamp="1714669034885" />
+    <state width="876" height="313" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1712956013897" />
+    <state width="876" height="313" key="GridCell.Tab.0.left" timestamp="1712956013897">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1852" height="323" key="GridCell.Tab.0.left.ideScale=125" timestamp="1713023206725">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1852" height="323" key="GridCell.Tab.0.left.ideScale=125/0.0.1920.1080@0.0.1920.1080" timestamp="1713023206725" />
+    <state width="978" height="574" key="GridCell.Tab.0.left.ideScale=150" timestamp="1714214356363">
+      <screen x="0" y="0" width="1080" height="1920" />
+    </state>
+    <state width="1818" height="307" key="GridCell.Tab.0.left.ideScale=150/0.0.1920.1080@0.0.1920.1080" timestamp="1713023726523" />
+    <state width="978" height="574" key="GridCell.Tab.0.left.ideScale=150/1080.220.1920.1080/0.0.1080.1920@0.0.1080.1920" timestamp="1714214356363" />
+    <state width="946" height="558" key="GridCell.Tab.0.left.ideScale=200" timestamp="1714669034884">
+      <screen x="0" y="0" width="1080" height="1920" />
+    </state>
+    <state width="946" height="558" key="GridCell.Tab.0.left.ideScale=200/1080.220.1920.1080/0.0.1080.1920@0.0.1080.1920" timestamp="1714311226466" />
+    <state width="946" height="558" key="GridCell.Tab.0.left.ideScale=200/1080.244.1920.1080/0.0.1080.1920@0.0.1080.1920" timestamp="1714561276393" />
+    <state width="946" height="558" key="GridCell.Tab.0.left.ideScale=200/1080.469.1920.1080/0.0.1080.1920@0.0.1080.1920" timestamp="1714669034884" />
+    <state width="876" height="313" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1712956013897" />
+    <state width="876" height="313" key="GridCell.Tab.0.right" timestamp="1712956013897">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1852" height="323" key="GridCell.Tab.0.right.ideScale=125" timestamp="1713023206725">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1852" height="323" key="GridCell.Tab.0.right.ideScale=125/0.0.1920.1080@0.0.1920.1080" timestamp="1713023206725" />
+    <state width="978" height="574" key="GridCell.Tab.0.right.ideScale=150" timestamp="1714214356363">
+      <screen x="0" y="0" width="1080" height="1920" />
+    </state>
+    <state width="1818" height="307" key="GridCell.Tab.0.right.ideScale=150/0.0.1920.1080@0.0.1920.1080" timestamp="1713023726523" />
+    <state width="978" height="574" key="GridCell.Tab.0.right.ideScale=150/1080.220.1920.1080/0.0.1080.1920@0.0.1080.1920" timestamp="1714214356363" />
+    <state width="946" height="558" key="GridCell.Tab.0.right.ideScale=200" timestamp="1714669034885">
+      <screen x="0" y="0" width="1080" height="1920" />
+    </state>
+    <state width="946" height="558" key="GridCell.Tab.0.right.ideScale=200/1080.220.1920.1080/0.0.1080.1920@0.0.1080.1920" timestamp="1714311226469" />
+    <state width="946" height="558" key="GridCell.Tab.0.right.ideScale=200/1080.244.1920.1080/0.0.1080.1920@0.0.1080.1920" timestamp="1714561276393" />
+    <state width="946" height="558" key="GridCell.Tab.0.right.ideScale=200/1080.469.1920.1080/0.0.1080.1920@0.0.1080.1920" timestamp="1714669034885" />
+    <state width="876" height="313" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1712956013897" />
+    <state width="978" height="574" key="GridCell.Tab.1.bottom.ideScale=150" timestamp="1714199023804">
+      <screen x="0" y="0" width="1080" height="1920" />
+    </state>
+    <state width="1818" height="307" key="GridCell.Tab.1.bottom.ideScale=150/0.0.1920.1080@0.0.1920.1080" timestamp="1713023658443" />
+    <state width="978" height="574" key="GridCell.Tab.1.bottom.ideScale=150/1080.220.1920.1080/0.0.1080.1920@0.0.1080.1920" timestamp="1714199023804" />
+    <state width="946" height="558" key="GridCell.Tab.1.bottom.ideScale=200" timestamp="1714669034882">
+      <screen x="0" y="0" width="1080" height="1920" />
+    </state>
+    <state width="946" height="558" key="GridCell.Tab.1.bottom.ideScale=200/1080.220.1920.1080/0.0.1080.1920@0.0.1080.1920" timestamp="1714311226477" />
+    <state width="946" height="558" key="GridCell.Tab.1.bottom.ideScale=200/1080.244.1920.1080/0.0.1080.1920@0.0.1080.1920" timestamp="1714561060512" />
+    <state width="946" height="558" key="GridCell.Tab.1.bottom.ideScale=200/1080.469.1920.1080/0.0.1080.1920@0.0.1080.1920" timestamp="1714669034882" />
+    <state width="978" height="574" key="GridCell.Tab.1.center.ideScale=150" timestamp="1714199023804">
+      <screen x="0" y="0" width="1080" height="1920" />
+    </state>
+    <state width="1818" height="307" key="GridCell.Tab.1.center.ideScale=150/0.0.1920.1080@0.0.1920.1080" timestamp="1713023658443" />
+    <state width="978" height="574" key="GridCell.Tab.1.center.ideScale=150/1080.220.1920.1080/0.0.1080.1920@0.0.1080.1920" timestamp="1714199023804" />
+    <state width="946" height="558" key="GridCell.Tab.1.center.ideScale=200" timestamp="1714669034882">
+      <screen x="0" y="0" width="1080" height="1920" />
+    </state>
+    <state width="946" height="558" key="GridCell.Tab.1.center.ideScale=200/1080.220.1920.1080/0.0.1080.1920@0.0.1080.1920" timestamp="1714311226473" />
+    <state width="946" height="558" key="GridCell.Tab.1.center.ideScale=200/1080.244.1920.1080/0.0.1080.1920@0.0.1080.1920" timestamp="1714561060511" />
+    <state width="946" height="558" key="GridCell.Tab.1.center.ideScale=200/1080.469.1920.1080/0.0.1080.1920@0.0.1080.1920" timestamp="1714669034882" />
+    <state width="978" height="574" key="GridCell.Tab.1.left.ideScale=150" timestamp="1714199023804">
+      <screen x="0" y="0" width="1080" height="1920" />
+    </state>
+    <state width="1818" height="307" key="GridCell.Tab.1.left.ideScale=150/0.0.1920.1080@0.0.1920.1080" timestamp="1713023658443" />
+    <state width="978" height="574" key="GridCell.Tab.1.left.ideScale=150/1080.220.1920.1080/0.0.1080.1920@0.0.1080.1920" timestamp="1714199023804" />
+    <state width="946" height="558" key="GridCell.Tab.1.left.ideScale=200" timestamp="1714669034881">
+      <screen x="0" y="0" width="1080" height="1920" />
+    </state>
+    <state width="946" height="558" key="GridCell.Tab.1.left.ideScale=200/1080.220.1920.1080/0.0.1080.1920@0.0.1080.1920" timestamp="1714311226472" />
+    <state width="946" height="558" key="GridCell.Tab.1.left.ideScale=200/1080.244.1920.1080/0.0.1080.1920@0.0.1080.1920" timestamp="1714561060511" />
+    <state width="946" height="558" key="GridCell.Tab.1.left.ideScale=200/1080.469.1920.1080/0.0.1080.1920@0.0.1080.1920" timestamp="1714669034881" />
+    <state width="978" height="574" key="GridCell.Tab.1.right.ideScale=150" timestamp="1714199023804">
+      <screen x="0" y="0" width="1080" height="1920" />
+    </state>
+    <state width="1818" height="307" key="GridCell.Tab.1.right.ideScale=150/0.0.1920.1080@0.0.1920.1080" timestamp="1713023658443" />
+    <state width="978" height="574" key="GridCell.Tab.1.right.ideScale=150/1080.220.1920.1080/0.0.1080.1920@0.0.1080.1920" timestamp="1714199023804" />
+    <state width="946" height="558" key="GridCell.Tab.1.right.ideScale=200" timestamp="1714669034882">
+      <screen x="0" y="0" width="1080" height="1920" />
+    </state>
+    <state width="946" height="558" key="GridCell.Tab.1.right.ideScale=200/1080.220.1920.1080/0.0.1080.1920@0.0.1080.1920" timestamp="1714311226475" />
+    <state width="946" height="558" key="GridCell.Tab.1.right.ideScale=200/1080.244.1920.1080/0.0.1080.1920@0.0.1080.1920" timestamp="1714561060512" />
+    <state width="946" height="558" key="GridCell.Tab.1.right.ideScale=200/1080.469.1920.1080/0.0.1080.1920@0.0.1080.1920" timestamp="1714669034882" />
+    <state x="463" y="151" key="SettingsEditor.ideScale=125" timestamp="1713021398337">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="463" y="151" key="SettingsEditor.ideScale=125/0.0.1920.1080@0.0.1920.1080" timestamp="1713021398337" />
+    <state x="462" y="135" key="SettingsEditor.ideScale=150" timestamp="1713023261983">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="462" y="135" key="SettingsEditor.ideScale=150/0.0.1920.1080@0.0.1920.1080" timestamp="1713023261983" />
+    <state x="-1" y="236" key="SettingsEditor.ideScale=200" timestamp="1714216015578">
+      <screen x="0" y="0" width="1080" height="1920" />
+    </state>
+    <state x="-1" y="236" key="SettingsEditor.ideScale=200/1080.220.1920.1080/0.0.1080.1920@0.0.1080.1920" timestamp="1714216015578" />
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="breakpointLogExpression">
+      <expression>
+        <expression-string>//    public static int coinChaneBU(int[] coins, int amount) {
+//        for(int i = 1 ; i &lt;= amount; i++){
+//            amountz[i] = Integer.MAX_VALUE;
+//            for(int coin: coins){
+//                if(i-coin &gt;=0 &amp;&amp; amountz[i-coin] != Integer.MAX_VALUE){
+//                    amountz[i] = Math.min(amountz[i], amountz[i-coin] + 1);
+//                }
+//            }
+//        }
+//        if(amountz[amount] != Integer.MAX_VALUE) return amountz[amount];
+//        return -1;
+//    }
+}</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="jrt:///usr/lib/jvm/java-17-openjdk!/java.base/java/util/List.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="48" column="25" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/example/Solution.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jrt:///usr/lib/jvm/java-17-openjdk!/java.base/java/util/Arrays.class">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jrt:///usr/lib/jvm/java-17-openjdk!/java.base/java/lang/ArrayIndexOutOfBoundsException.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+  </component>
+</project>

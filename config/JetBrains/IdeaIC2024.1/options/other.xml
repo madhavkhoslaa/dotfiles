@@ -1,0 +1,64 @@
+<application>
+  <component name="FileEditorProviderManager">{}</component>
+  <component name="LangManager">
+    <option name="languageName" value="JAVA" />
+  </component>
+  <component name="NotRoamableUiSettings">
+    <option name="fontFace" value="Liberation Mono" />
+    <option name="fontSize" value="16.0" />
+    <option name="presentationModeIdeScale" value="1.0" />
+    <option name="overrideLafFonts" value="true" />
+  </component>
+  <component name="PropertyService"><![CDATA[{
+  "keyToString": {
+    "LAST_CALCULATED_COLOR_INDEX_KEY": "2",
+    "MarketplacePluginsSearchHistory": "lombok\n/tag:\"Tools Integration\"\n/suggested",
+    "MemberChooser.copyJavadoc": "false",
+    "MemberChooser.showClasses": "true",
+    "NewProjectWizard.generateOnboardingTips": "true",
+    "NewProjectWizard.groupIdState": "org.example",
+    "RunOnceActivity.java.code.vision.default.position.was.set": "true",
+    "SettingsSearchHistory": "font",
+    "ask.about.ctrl.y.shortcut.v2": "true",
+    "build.toolwindow.Build Output.selection.state": "com.intellij.build.BuildTreeConsoleView",
+    "build.toolwindow.Sync.selection.state": "com.intellij.build.BuildTreeConsoleView",
+    "build.toolwindow.run.selection.state": "com.intellij.build.BuildTreeConsoleView",
+    "com.intellij.ide.projectWizard.generators.JavaNewProjectWizard$Step.selectedStep": "Maven",
+    "debugger.smart.chooser.counter": "3",
+    "decompiler.legal.notice.accepted": "true",
+    "enter_selection_count": "5",
+    "experimental.ui.on.first.startup": "true",
+    "experimental.ui.used.version": "241.14494.240",
+    "fileTypeChangedCounter": "2",
+    "fontSizeToResetConsole": "9.0",
+    "fontSizeToResetEditor": "9.0",
+    "got.it.tooltip.new.terminal.promotion": "1",
+    "got.it.tooltip.onboarding.tips.debug.panel.got.it": "1",
+    "ide.memory.adjusted": "true",
+    "installed.kotlin.plugin.version": "241.14494.240-IJ",
+    "jdk.selected.JAVA_MODULE": "17",
+    "migrated.non.roamable.values.from.general.settings": "true",
+    "onboarding.generation.number": "3",
+    "previousColorScheme": "_@user_Dark",
+    "project.wizard.group": "NPW.simple-project.Java",
+    "registry.to.advanced.settings.migration.build": "IC-241.14494.240"
+  },
+  "keyToStringList": {
+    "file.chooser.recent.files": [
+      "/home/vroomer/Documents/BitDB",
+      "/home/vroomer/go-jek"
+    ],
+    "fileTypeDetectors": [
+      "com.intellij.ide.scratch.ScratchFileServiceImpl$Detector",
+      "org.jetbrains.plugins.textmate.TextMateFileType$TextMateFileDetector"
+    ]
+  }
+}]]></component>
+  <component name="TerminalCommandHistoryManager">
+    <command-history-files>
+      <command-history-file filename="go-jek-history" project-path="/home/vroomer/go-jek" last-access-time="1714936133718" />
+      <command-history-file filename="BitDB-history" project-path="/home/vroomer/Documents/BitDB" last-access-time="1714990638858" />
+      <command-history-file filename="untitled-history" project-path="/home/vroomer/IdeaProjects/untitled" last-access-time="1714195856195" />
+    </command-history-files>
+  </component>
+</application>
