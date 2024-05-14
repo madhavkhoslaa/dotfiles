@@ -1,8 +1,0 @@
-{
-  "editor.formatOnSave": true,
-  "editor.formatOnPaste": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "typescript.updateImportsOnFileMove.enabled": "always",
-  "workbench.colorTheme": "XD Theme",
-  "workbench.iconTheme": "eq-material-theme-icons"
-}

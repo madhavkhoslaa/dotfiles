@@ -1,5 +1,0 @@
-2024/01/15-23:23:46.349 afd Reusing MANIFEST /home/vroomer/.config/Postman/Partitions/d2e32a89-e9d9-4c98-9a33-6c09e0cb770e/IndexedDB/file__0.indexeddb.leveldb/MANIFEST-000001
-2024/01/15-23:23:46.349 afd Recovering log #9
-2024/01/15-23:23:46.351 afd Reusing old log /home/vroomer/.config/Postman/Partitions/d2e32a89-e9d9-4c98-9a33-6c09e0cb770e/IndexedDB/file__0.indexeddb.leveldb/000009.log 
-2024/01/15-23:23:46.351 afd Delete type=2 #10
-2024/01/15-23:23:46.351 afd Delete type=2 #7

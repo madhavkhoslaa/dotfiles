@@ -1,9 +1,0 @@
-2024/05/02-22:45:43.130 4 Reusing MANIFEST /home/vroomer/.config/google-chrome/Default/Local Storage/leveldb/MANIFEST-000001
-2024/05/02-22:45:43.158 4 Recovering log #10
-2024/05/02-22:45:43.161 4 Reusing old log /home/vroomer/.config/google-chrome/Default/Local Storage/leveldb/000010.log 
-2024/05/03-13:08:54.730 6 Level-0 table #14: started
-2024/05/03-13:08:54.737 6 Level-0 table #14: 70375 bytes OK
-2024/05/03-13:08:54.742 6 Delete type=0 #10
-2024/05/03-13:59:24.903 4 Level-0 table #16: started
-2024/05/03-13:59:24.909 4 Level-0 table #16: 7102 bytes OK
-2024/05/03-13:59:24.915 4 Delete type=0 #13

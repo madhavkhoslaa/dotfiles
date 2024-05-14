@@ -1,5 +1,0 @@
-2024/04/11-15:45:11.563 85bb Creating DB /home/vroomer/.config/Slack/Local Storage/leveldb since it was missing.
-2024/04/11-15:45:11.570 85bb Reusing MANIFEST /home/vroomer/.config/Slack/Local Storage/leveldb/MANIFEST-000001
-2024/04/11-18:19:12.084 85bb Level-0 table #5: started
-2024/04/11-18:19:12.093 85bb Level-0 table #5: 15495 bytes OK
-2024/04/11-18:19:12.095 85bb Delete type=0 #3
