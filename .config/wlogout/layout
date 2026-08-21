@@ -1,4 +1,10 @@
 {
+    "label" : "lock",
+    "action" : "hyprlock",
+    "text" : "L",
+    "keybind" : "l"
+}
+{
     "label" : "shutdown",
     "action" : "systemctl poweroff",
     "text" : "S",
