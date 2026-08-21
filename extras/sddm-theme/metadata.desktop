@@ -1,0 +1,11 @@
+[SddmGreeterTheme]
+Name=vroomer-lock
+Description=Dark rounded greeter matching the hyprlock/wlogout look, based on the stock Maldives theme's proven layout and login logic
+Author=Abdurrahman AVCI (base), restyled locally
+License=CC-BY-SA
+Type=sddm-theme
+Version=0.1
+MainScript=Main.qml
+ConfigFile=theme.conf
+Theme-Id=vroomer-lock
+Theme-API=2.0

@@ -216,10 +216,13 @@ fi
 # Enable networking services
 # --------------------------------------------------
 #
-# `pacman -S networkmanager bluez` does not enable or start either
-# service on its own -- Arch's vendor presets ship both disabled. Without
-# this, nmcli/wifi_menu.py and bluetoothctl/blueman have nothing running
-# to talk to right after a fresh install.
+# `pacman -S networkmanager bluez` does not enable or start NetworkManager
+# on its own -- Arch's vendor presets ship it disabled. Without this,
+# nmcli/wifi_menu.py have nothing running to talk to right after a fresh
+# install.
+#
+# Bluetooth is intentionally NOT enabled on boot; start it manually with
+# `sudo systemctl start bluetooth` when needed.
 
 if command -v systemctl >/dev/null 2>&1; then
     info "Enabling NetworkManager..."
@@ -227,9 +230,9 @@ if command -v systemctl >/dev/null 2>&1; then
     success "NetworkManager configured."
 
     if command -v bluetoothctl >/dev/null 2>&1; then
-        info "Enabling Bluetooth..."
-        sudo systemctl enable --now bluetooth.service
-        success "Bluetooth configured."
+        info "Keeping Bluetooth off after boot..."
+        sudo systemctl disable --now bluetooth.service
+        success "Bluetooth disabled (start manually with: sudo systemctl start bluetooth)."
     fi
 else
     warning "systemctl was not found; skipping NetworkManager/Bluetooth service setup."

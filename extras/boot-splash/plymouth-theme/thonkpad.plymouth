@@ -1,0 +1,9 @@
+[Plymouth Theme]
+Name=ThönkPad
+Description=ThönkPad boot splash - pulsing logo over the boot log
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/thonkpad
+ScriptFile=/usr/share/plymouth/themes/thonkpad/thonkpad.script
+ConsoleLogBackgroundColor=0x00000000
