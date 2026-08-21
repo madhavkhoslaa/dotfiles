@@ -4,11 +4,11 @@
 -- Patched for ThinkPad E15: keep the built-in panel always on.
 -- Upstream disabled eDP-1 and required an external HDMI-A-1 monitor,
 -- which blanks the screen on a laptop-only setup.
--- HDMI-A-1 is only applied when actually connected (docked), and never
--- disables eDP-1.
-
-hl.monitor({ output = "eDP-1", mode = "preferred", position = "auto", scale = "auto" })
-hl.monitor({ output = "HDMI-A-1", mode = "preferred", position = "auto", scale = "auto" })
+--
+-- Monitor layout is owned by kanshi (~/.config/kanshi/config), not hardcoded
+-- here, so switching locations/docks just means adding a kanshi profile.
+-- It's started first in the autostart block below and applies within
+-- milliseconds of launch; no monitor lines needed here as a fallback.
 
 ---- MY PROGRAMS ----
 
@@ -22,6 +22,7 @@ browser    = "brave"
 ---- AUTOSTART ----
 
 hl.on("hyprland.start", function()
+    hl.exec_cmd("kanshi")
     hl.exec_cmd("waybar")
     hl.exec_cmd("dunst")
     hl.exec_cmd("nm-applet")

@@ -1,0 +1,17 @@
+# Kanshi output profiles.
+# kanshi has no native "mirror" directive, so the docked profile hands the
+# eDP-1 mirror setup off to Hyprland directly via exec. This fork of
+# Hyprland only accepts runtime config changes through `hyprctl eval`
+# (Lua), not the standard `hyprctl keyword` - see hyprland.lua for the
+# hl.monitor() call this mirrors.
+# Reload after edits with: kanshictl reload
+
+profile docked {
+	output HDMI-A-1 enable mode 1920x1080@144Hz position 0,0
+	output eDP-1 enable mode preferred position 0,0
+	exec ~/.config/hypr/scripts/mirror-edp-to-hdmi.sh
+}
+
+profile laptop {
+	output eDP-1 enable mode preferred position 0,0
+}
