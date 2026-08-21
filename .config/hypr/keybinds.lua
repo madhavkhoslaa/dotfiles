@@ -29,7 +29,8 @@ hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd("sh -c 'pgrep -x waybar >/dev
 
 -- Screenshots
 hl.bind(mainMod .. " + Delete", hl.dsp.exec_cmd("grim " .. home .. "/Pictures/$(date +%s).png"))
-hl.bind("Delete", hl.dsp.exec_cmd('grim -g "$(slurp)" ' .. home .. '/Pictures/$(date +%s).png'))
+-- Bare PrtSc (not Delete -- that key stays a normal Delete)
+hl.bind("Print", hl.dsp.exec_cmd('grim -g "$(slurp)" ' .. home .. '/Pictures/$(date +%s).png'))
 hl.bind(mainMod .. " + SHIFT + C", hl.dsp.exec_cmd(
     'grim -g "$(slurp)" - | tee ' .. home .. '/Pictures/Screenshots/$(date +%s).png | wl-copy'
 ))
