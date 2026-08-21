@@ -1,77 +1,118 @@
 #!/usr/bin/env python3
-"""Curses Wi-Fi picker backed by iwctl. Up/Down select, Enter connects
-(prompting for a passphrase when the network is secured), p toggles the
-radio on/off, q quits."""
+"""Curses Wi-Fi picker backed by nmcli. Up/Down select, Enter connects
+(saved networks connect straight away with no prompt; new secured
+networks prompt for a passphrase), p toggles the radio on/off, q quits.
+
+This machine runs NetworkManager with iwd as its backend (see
+/etc/NetworkManager/conf.d/wifi_backend.conf) and NetworkManager actively
+owns wlan0 (`nmcli device status` shows it "connected", not
+"unmanaged"). Talking to iwctl directly -- as this script used to --
+races NetworkManager's own connection state machine for the device:
+`journalctl -u iwd` shows manual iwctl connect attempts getting
+cancelled or failing auth (connect-failed, status: 1) moments before
+NetworkManager's own autoconnect succeeds using the very same stored
+password. Driving nmcli instead goes through the manager that actually
+owns the device, which is what fixes "I type the password and it just
+doesn't connect".
+"""
 
 import curses
-import re
 import subprocess
 import sys
-
-ANSI_RE = re.compile(r"\x1b\[[0-9;]*m")
 
 
 def run(*args, timeout=15):
     return subprocess.run(
-        ["iwctl", *args], capture_output=True, text=True, timeout=timeout
+        ["nmcli", *args], capture_output=True, text=True, timeout=timeout
     )
 
 
+def split_fields(line):
+    # nmcli -t escapes ':' and '\' as '\:' and '\\' inside field values.
+    fields = []
+    cur = []
+    i = 0
+    while i < len(line):
+        c = line[i]
+        if c == "\\" and i + 1 < len(line):
+            cur.append(line[i + 1])
+            i += 2
+            continue
+        if c == ":":
+            fields.append("".join(cur))
+            cur = []
+            i += 1
+            continue
+        cur.append(c)
+        i += 1
+    fields.append("".join(cur))
+    return fields
+
+
 def get_device():
-    out = run("device", "list").stdout
+    out = run("-t", "-f", "DEVICE,TYPE", "device").stdout
     for line in out.splitlines():
-        line = ANSI_RE.sub("", line)
-        parts = line.split()
-        if len(parts) >= 5 and parts[-1] == "station":
-            return parts[0]
+        fields = split_fields(line)
+        if len(fields) >= 2 and fields[1] == "wifi":
+            return fields[0]
     return "wlan0"
 
 
-def get_power(device):
-    out = ANSI_RE.sub("", run("device", "list").stdout)
-    for line in out.splitlines():
-        parts = line.split()
-        if parts and parts[0] == device and len(parts) > 2:
-            return parts[2].lower() == "on"
-    return True
+def get_power():
+    out = run("radio", "wifi").stdout.strip().lower()
+    return out.startswith("enabled")
 
 
-def toggle_power(stdscr, device):
-    new_state = "off" if get_power(device) else "on"
+def toggle_power(stdscr):
+    new_state = "off" if get_power() else "on"
     status_line(stdscr, f"Turning Wi-Fi {new_state}...")
-    run("device", device, "set-property", "Powered", new_state, timeout=10)
+    run("radio", "wifi", new_state, timeout=10)
     if new_state == "on":
-        run("station", device, "scan")
+        scan()
+
+
+def scan():
+    run("device", "wifi", "rescan", timeout=10)
+
+
+def get_saved_ssids():
+    out = run("-t", "-f", "NAME,TYPE", "connection", "show").stdout
+    saved = set()
+    for line in out.splitlines():
+        if not line.strip():
+            continue
+        fields = split_fields(line)
+        if len(fields) >= 2 and fields[1] == "802-11-wireless":
+            saved.add(fields[0])
+    return saved
 
 
 def get_networks(device):
-    out = ANSI_RE.sub("", run("station", device, "get-networks").stdout)
-    lines = out.splitlines()
-    header = next((l for l in lines if "Security" in l and "Signal" in l), None)
-    if header is None:
-        return []
-
-    sec_idx = header.index("Security")
-    sig_idx = header.index("Signal")
-    start = lines.index(header) + 2  # skip header + separator
+    out = run(
+        "-t", "-f", "SSID,SECURITY,SIGNAL,IN-USE",
+        "device", "wifi", "list", "ifname", device,
+    ).stdout
+    saved = get_saved_ssids()
 
     networks = []
-    for line in lines[start:]:
-        if not line.strip() or set(line.strip()) == {"-"}:
+    seen = set()
+    for line in out.splitlines():
+        if not line.strip():
             continue
-        name_field = line[:sec_idx]
-        security = line[sec_idx:sig_idx].strip()
-        signal = line[sig_idx:].strip()
-        connected = name_field.lstrip().startswith(">")
-        ssid = name_field.lstrip().lstrip(">").strip()
-        if not ssid:
+        fields = split_fields(line)
+        if len(fields) < 4:
             continue
+        ssid, security, signal, in_use = fields[0], fields[1], fields[2], fields[3]
+        if not ssid or ssid in seen:
+            continue
+        seen.add(ssid)
         networks.append(
             {
                 "ssid": ssid,
                 "security": security,
                 "signal": signal,
-                "connected": connected,
+                "connected": in_use.strip() == "*",
+                "saved": ssid in saved,
             }
         )
     return networks
@@ -94,6 +135,9 @@ def password_modal(stdscr, ssid):
         win.addnstr(1, 2, f"Password for {ssid}", box_w - 4)
         win.addnstr(2, 2, "*" * len(password), box_w - 4)
         win.addnstr(3, 2, "Enter=connect  Esc=cancel", box_w - 4)
+        # Keep the cursor tracking the end of what's typed instead of
+        # wherever the last addnstr() left it (previously the help line).
+        win.move(2, min(2 + len(password), box_w - 3))
         win.refresh()
 
         ch = win.getch()
@@ -115,26 +159,61 @@ def status_line(stdscr, text):
     stdscr.refresh()
 
 
+def describe_failure(err, had_password):
+    # NetworkManager's actual message for a wrong Wi-Fi password is
+    # "Secrets were required, but not provided" -- true-sounding but
+    # misleading, since a password *was* given; it means the handshake
+    # never completed so NM falls back to asking for secrets again.
+    # Surface that plainly instead of the confusing raw text.
+    if had_password and (
+        "secrets were required" in err.lower() or "802-11-wireless-security" in err.lower()
+    ):
+        return "Wrong password."
+    return f"Failed: {err[:70]}" if err else "Failed: unknown error."
+
+
 def connect(stdscr, device, net):
-    if net["security"] and net["security"].lower() != "open":
-        password = password_modal(stdscr, net["ssid"])
-        if password is None:
-            return
-        status_line(stdscr, f"Connecting to {net['ssid']}...")
-        result = run("--passphrase", password, "station", device, "connect", net["ssid"], timeout=30)
-    else:
-        status_line(stdscr, f"Connecting to {net['ssid']}...")
-        result = run("station", device, "connect", net["ssid"], timeout=30)
+    had_password = False
+    try:
+        if net["saved"]:
+            # Already has a stored profile -- nmcli uses it directly, no
+            # need to (and no point re-)prompt for a password.
+            status_line(stdscr, f"Connecting to {net['ssid']} (saved)...")
+            result = run("connection", "up", "id", net["ssid"], timeout=30)
+        elif net["security"] and net["security"] != "--":
+            password = password_modal(stdscr, net["ssid"])
+            if password is None:
+                return
+            had_password = True
+            status_line(stdscr, f"Connecting to {net['ssid']}...")
+            result = run(
+                "device", "wifi", "connect", net["ssid"],
+                "password", password, "ifname", device, timeout=30,
+            )
+            if result.returncode != 0:
+                # nmcli leaves behind a profile with the bad password on
+                # failure; drop it so the next attempt isn't silently stuck
+                # reusing the wrong credential.
+                run("connection", "delete", net["ssid"], timeout=10)
+        else:
+            status_line(stdscr, f"Connecting to {net['ssid']}...")
+            result = run(
+                "device", "wifi", "connect", net["ssid"], "ifname", device, timeout=30
+            )
+    except subprocess.TimeoutExpired:
+        status_line(stdscr, f"Timed out connecting to {net['ssid']}. Press any key.")
+        stdscr.getch()
+        return
 
     if result.returncode == 0:
         status_line(stdscr, f"Connected to {net['ssid']}. Press any key.")
     else:
-        err = (result.stderr or result.stdout or "unknown error").strip()
-        status_line(stdscr, f"Failed: {err[:70]}. Press any key.")
+        err = (result.stderr or result.stdout or "").strip()
+        status_line(stdscr, f"{describe_failure(err, had_password)} Press any key.")
     stdscr.getch()
 
 
-HELP = "Up/Down: select   Enter: connect   p: toggle wifi   q: quit"
+HELP = "Up/Down: select   Enter: connect   *: saved   p: toggle wifi   q: quit"
 
 
 def draw(stdscr, device, networks, selected, powered):
@@ -152,7 +231,8 @@ def draw(stdscr, device, networks, selected, powered):
         if row >= h - 1:
             break
         marker = ">" if net["connected"] else " "
-        label = f"{marker} {net['ssid']:<32} {net['security']:<8} {net['signal']}"
+        saved = "*" if net["saved"] else " "
+        label = f"{marker}{saved} {net['ssid']:<32} {net['security']:<8} {net['signal']}"
         attr = curses.A_REVERSE if i == selected else curses.A_NORMAL
         stdscr.addnstr(row, 2, label, w - 3, attr)
 
@@ -165,11 +245,11 @@ def main(stdscr):
     stdscr.keypad(True)
 
     device = get_device()
-    powered = get_power(device)
+    powered = get_power()
     networks = []
     if powered:
         status_line(stdscr, "Scanning...")
-        run("station", device, "scan")
+        scan()
         networks = get_networks(device)
 
     selected = 0
@@ -180,8 +260,8 @@ def main(stdscr):
         if ch in (ord("q"), ord("Q")):
             break
         elif ch in (ord("p"), ord("P")):
-            toggle_power(stdscr, device)
-            powered = get_power(device)
+            toggle_power(stdscr)
+            powered = get_power()
             networks = get_networks(device) if powered else []
             selected = min(selected, max(len(networks) - 1, 0))
         elif ch in (curses.KEY_UP, ord("k")) and networks:

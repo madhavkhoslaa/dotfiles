@@ -34,17 +34,37 @@ notify() {
     notify-send -a "Displays" "$1" "$2" 2>/dev/null || true
 }
 
+# Far off-screen parking spot. reset_pair() used to put both LAPTOP and
+# MON at 0x0 at once -- two non-mirrored outputs both claiming the same
+# position is exactly what trips the compositor's overlap warning, even
+# though it's just a transient step on the way to a mirror. Park MON out
+# here first so LAPTOP can claim 0x0 alone with no overlapping instant.
+PARK="100000x0"
+
 reset_pair() {
+    apply "$MON" "preferred" "$PARK" "1" "none"
     apply "$LAPTOP" "preferred" "0x0" "$LAPTOP_SCALE" "none"
-    apply "$MON" "preferred" "0x0" "1" "none"
 }
 
 laptop_leader() {
     apply "$LAPTOP" "preferred" "0x0" "$LAPTOP_SCALE" "none"
 }
 
+# Must match brightness.sh's MIN: that script allows the panel down to 0%
+# only while an external monitor is connected. Once it's gone, the panel
+# is the only screen again, so bring brightness back up to the normal
+# floor rather than leaving it invisible.
+MIN_BRIGHTNESS=5
+
+raise_brightness_floor() {
+    local current
+    current=$(brightnessctl -m 2>/dev/null | cut -d, -f4 | tr -d '%')
+    [ -n "$current" ] && (( current < MIN_BRIGHTNESS )) && brightnessctl set "${MIN_BRIGHTNESS}%" >/dev/null
+}
+
 if [ "$ACTION" = "removed" ]; then
     laptop_leader
+    raise_brightness_floor
     notify "Monitor disconnected" "$LAPTOP is the main display"
     exit 0
 fi
@@ -78,8 +98,13 @@ case "$choice" in
         dir=$(printf "Mirror monitor \xe2\x86\x92 laptop\nMirror laptop \xe2\x86\x92 monitor" | rofi -dmenu -i -p "Mirror direction")
         case "$dir" in
             "Mirror monitor → laptop")
-                apply "$MON" "$best_mode" "0x0" "1" "none"
+                # LAPTOP must give up its 0x0 slot (by becoming the
+                # mirror) before MON is moved onto that same position --
+                # otherwise both are briefly real, non-mirrored outputs
+                # sharing 0x0, which is the overlap the compositor warns
+                # about. MON is still parked from reset_pair here.
                 apply "$LAPTOP" "preferred" "0x0" "$LAPTOP_SCALE" "$MON"
+                apply "$MON" "$best_mode" "0x0" "1" "none"
                 notify "Mirroring" "Laptop mirrors $MON ($best_mode)"
                 ;;
             "Mirror laptop → monitor")
