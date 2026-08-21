@@ -94,6 +94,7 @@
         "format-on": "",
         "format-off": "",
         "format-disabled": "",
+        "format-no-controller": "",
         "format-connected": "",
         "format-connected-battery": " {device_battery_percentage}%",
         "tooltip-format": "{controller_alias}\t{controller_address}",
