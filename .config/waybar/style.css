@@ -44,7 +44,8 @@ window#waybar {
 #network,
 #bluetooth,
 #backlight,
-#battery {
+#battery,
+#custom-external-monitor {
     padding: 0 10px;
     margin: 0 2px;
 }
@@ -139,7 +140,8 @@ tooltip label {
 #network,
 #bluetooth,
 #backlight,
-#battery {
+#battery,
+#custom-external-monitor {
     transition: font-size 0.15s ease;
 }
 
@@ -154,6 +156,7 @@ tooltip label {
 #network:hover,
 #bluetooth:hover,
 #backlight:hover,
-#battery:hover {
+#battery:hover,
+#custom-external-monitor:hover {
     font-size: 14px;
 }
