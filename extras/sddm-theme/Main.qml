@@ -1,281 +1,428 @@
-/***************************************************************************
-* Copyright (c) 2013 Abdurrahman AVCI <abdurrahmanavci@gmail.com>
-*
-* Permission is hereby granted, free of charge, to any person
-* obtaining a copy of this software and associated documentation
-* files (the "Software"), to deal in the Software without restriction,
-* including without limitation the rights to use, copy, modify, merge,
-* publish, distribute, sublicense, and/or sell copies of the Software,
-* and to permit persons to whom the Software is furnished to do so,
-* subject to the following conditions:
-*
-* The above copyright notice and this permission notice shall be included
-* in all copies or substantial portions of the Software.
-*
-* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
-* OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
-* THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR
-* OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
-* ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
-* OR OTHER DEALINGS IN THE SOFTWARE.
-*
-***************************************************************************/
+import QtQuick 2.15
 
-import QtQuick 2.0
-import SddmComponents 2.0
+// Minimal SDDM greeter styled to match .config/hypr/hyprlock.conf: same
+// background-image treatment, same clock/date layout, same pill-shaped
+// outline fields with no fill. No SddmComponents dependency and no
+// bundled widget images -- the only asset this theme ships is
+// background.png, everything else is drawn with plain QtQuick shapes/text.
 
 Rectangle {
-    id: container
-    width: 640
-    height: 480
+    id: root
+    width: 1280
+    height: 800
+    color: "black"
 
-    LayoutMirroring.enabled: Qt.locale().textDirection == Qt.RightToLeft
-    LayoutMirroring.childrenInherit: true
+    property int sessionIndex: sessionModel.lastIndex
+    property string sessionName: ""
+    property string statusText: ""
+    property color statusColor: "white"
 
-    property int sessionIndex: session.index
-
-    TextConstants { id: textConstants }
-
-    Connections {
-        target: sddm
-
-        onLoginSucceeded: {
-            errorMessage.color = "steelblue"
-            errorMessage.text = textConstants.loginSucceeded
-        }
-
-        onLoginFailed: {
-            password.text = ""
-            errorMessage.color = "red"
-            errorMessage.text = textConstants.loginFailed
-        }
-        onInformationMessage: {
-            errorMessage.color = "red"
-            errorMessage.text = message
-        }
-    }
-
-    Background {
+    Image {
+        id: bg
         anchors.fill: parent
         source: config.background
         fillMode: Image.PreserveAspectCrop
+        asynchronous: true
         onStatusChanged: {
-            if (status == Image.Error && source != config.defaultBackground) {
+            if (status === Image.Error && source != config.defaultBackground) {
                 source = config.defaultBackground
             }
         }
     }
 
-    Rectangle {
-        anchors.fill: parent
-        color: "transparent"
-        //visible: primaryScreen
+    Timer {
+        interval: 1000
+        running: true
+        repeat: true
+        triggeredOnStart: true
+        property date now: new Date()
+        onTriggered: now = new Date()
+        id: clockTick
+    }
 
-        Clock {
-            id: clock
-            anchors.margins: 5
-            anchors.top: parent.top; anchors.right: parent.right
+    Connections {
+        target: sddm
+        function onLoginSucceeded() {
+            root.statusColor = "white"
+            root.statusText = "Logging in..."
+        }
+        function onLoginFailed() {
+            passwordInput.text = ""
+            root.statusColor = "#ff8080"
+            root.statusText = "Login failed"
+        }
+        function onInformationMessage(message) {
+            root.statusColor = "#ff8080"
+            root.statusText = message
+        }
+    }
 
-            color: "white"
-            timeFont.family: "Oxygen"
+    // pill outline matching hyprlock's input-field {} block: no fill,
+    // 2px white-ish border, fully rounded
+    component FieldFrame: Rectangle {
+        implicitWidth: 260
+        implicitHeight: 44
+        radius: height / 2
+        color: "#00000000"
+        border.width: 2
+        border.color: "#e5e5e5"
+    }
+
+    Column {
+        anchors.centerIn: parent
+        spacing: 22
+
+        // TIME / DATE, same stack as the $TIME / date labels in hyprlock.conf
+        Column {
+            anchors.horizontalCenter: parent.horizontalCenter
+            spacing: 2
+
+            Text {
+                anchors.horizontalCenter: parent.horizontalCenter
+                text: Qt.formatTime(clockTick.now, "hh:mm")
+                font.family: "Iosevka"
+                font.pixelSize: 64
+                color: "white"
+            }
+            Text {
+                anchors.horizontalCenter: parent.horizontalCenter
+                text: Qt.formatDate(clockTick.now, "dddd, dd MMMM yyyy")
+                font.family: "CaskaydiaCove Nerd Font"
+                font.pixelSize: 15
+                color: "white"
+            }
         }
 
-        Image {
-            id: rectangle
-            anchors.centerIn: parent
-            width: Math.max(320, mainColumn.implicitWidth + 50)
-            height: Math.max(320, mainColumn.implicitHeight + 50)
+        // USERNAME (editable + dropdown of known local users). Trigger row,
+        // divider, and list all live inside ONE clip:true rounded Rectangle
+        // ("card") -- that way the outer silhouette is perfectly rounded
+        // with no seam gaps, without needing per-corner radius (which Qt5's
+        // Rectangle doesn't have; sddm-greeter still ships a Qt5 build).
+        // Colors match kitty's look (.config/kitty/kitty.conf background
+        // #000000 + the opacity=0.7 window rule in rules.lua): black glass,
+        // white text, not solid like the reference image.
+        Item {
+            anchors.horizontalCenter: parent.horizontalCenter
+            width: 260
+            height: userCard.height
 
-            source: "rectangle.png"
-
-            Column {
-                id: mainColumn
-                anchors.centerIn: parent
-                spacing: 12
-                Text {
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    color: "black"
-                    verticalAlignment: Text.AlignVCenter
-                    height: text.implicitHeight
-                    width: parent.width
-                    text: textConstants.welcomeText.arg(sddm.hostName)
-                    wrapMode: Text.WordWrap
-                    font.pixelSize: 24
-                    elide: Text.ElideRight
-                    horizontalAlignment: Text.AlignHCenter
-                }
+            Rectangle {
+                id: userCard
+                width: parent.width
+                height: userColumn.height
+                radius: 16
+                color: "#b3000000"
+                border.width: 1
+                border.color: "#33ffffff"
+                clip: true
 
                 Column {
+                    id: userColumn
                     width: parent.width
-                    spacing: 4
-                    Text {
-                        id: lblName
+
+                    Item {
                         width: parent.width
-                        text: textConstants.userName
-                        font.bold: true
-                        font.pixelSize: 12
-                    }
+                        height: 44
 
-                    TextBox {
-                        id: name
-                        width: parent.width; height: 30
-                        text: userModel.lastUser
-                        font.pixelSize: 14
+                        Row {
+                            anchors.fill: parent
+                            anchors.leftMargin: 18
+                            anchors.rightMargin: 14
+                            spacing: 6
 
-                        KeyNavigation.backtab: rebootButton; KeyNavigation.tab: password
+                            TextInput {
+                                id: userInput
+                                width: parent.width - userArrow.width - 6
+                                anchors.verticalCenter: parent.verticalCenter
+                                text: userModel.lastUser
+                                color: "white"
+                                font.family: "CaskaydiaCove Nerd Font"
+                                font.pixelSize: 15
+                                selectByMouse: true
+                                clip: true
 
-                        Keys.onPressed: {
-                            if (event.key === Qt.Key_Return || event.key === Qt.Key_Enter) {
-                                sddm.login(name.text, password.text, sessionIndex)
-                                event.accepted = true
+                                Keys.onReturnPressed: passwordInput.forceActiveFocus()
+                                Keys.onEnterPressed: passwordInput.forceActiveFocus()
+                                KeyNavigation.tab: passwordInput
+                            }
+
+                            Text {
+                                id: userArrow
+                                anchors.verticalCenter: parent.verticalCenter
+                                text: "▾"
+                                color: "white"
+                                font.pixelSize: 13
+                                rotation: userList.visible ? 180 : 0
+                                Behavior on rotation { NumberAnimation { duration: 120 } }
+
+                                MouseArea {
+                                    anchors.fill: parent
+                                    anchors.margins: -8
+                                    onClicked: userList.visible = !userList.visible
+                                }
                             }
                         }
                     }
-                }
 
-                Column {
-                    width: parent.width
-                    spacing : 4
-                    Text {
-                        id: lblPassword
+                    Rectangle {
+                        visible: userList.visible
                         width: parent.width
-                        text: textConstants.password
-                        font.bold: true
-                        font.pixelSize: 12
+                        height: 1
+                        color: "#26ffffff"
                     }
-
-                    PasswordBox {
-                        id: password
-                        width: parent.width; height: 30
-                        font.pixelSize: 14
-
-                        KeyNavigation.backtab: name; KeyNavigation.tab: session
-
-                        Keys.onPressed: {
-                            if (event.key === Qt.Key_Return || event.key === Qt.Key_Enter) {
-                                sddm.login(name.text, password.text, sessionIndex)
-                                event.accepted = true
-                            }
-                        }
-                    }
-                }
-
-                Row {
-                    spacing: 4
-                    width: parent.width / 2
-                    z: 100
 
                     Column {
-                        z: 100
-                        width: parent.width * 1.3
-                        spacing : 4
-                        anchors.bottom: parent.bottom
+                        id: userList
+                        visible: false
+                        width: parent.width
+                        padding: 4
+                        spacing: 2
 
-                        Text {
-                            id: lblSession
-                            width: parent.width
-                            text: textConstants.session
-                            wrapMode: TextEdit.WordWrap
-                            font.bold: true
-                            font.pixelSize: 12
+                        Repeater {
+                            id: userRepeater
+                            model: userModel
+                            delegate: Rectangle {
+                                width: userList.width - 8
+                                height: 34
+                                radius: 10
+                                color: userRowMouse.containsMouse ? "#1fffffff" : "#00000000"
+
+                                Text {
+                                    anchors.fill: parent
+                                    leftPadding: 12
+                                    verticalAlignment: Text.AlignVCenter
+                                    text: name
+                                    color: "white"
+                                    font.family: "CaskaydiaCove Nerd Font"
+                                    font.pixelSize: 14
+                                }
+
+                                MouseArea {
+                                    id: userRowMouse
+                                    anchors.fill: parent
+                                    hoverEnabled: true
+                                    onClicked: {
+                                        userInput.text = name
+                                        userList.visible = false
+                                        passwordInput.forceActiveFocus()
+                                    }
+                                }
+                            }
                         }
+                    }
+                }
+            }
+        }
 
-                        ComboBox {
-                            id: session
-                            width: parent.width; height: 30
-                            font.pixelSize: 14
+        // PASSWORD
+        FieldFrame {
+            id: passwordFrame
+            anchors.horizontalCenter: parent.horizontalCenter
 
-                            arrowIcon: "angle-down.png"
+            TextInput {
+                id: passwordInput
+                anchors.fill: parent
+                anchors.leftMargin: 18
+                anchors.rightMargin: 18
+                verticalAlignment: TextInput.AlignVCenter
+                color: "white"
+                font.family: "CaskaydiaCove Nerd Font"
+                font.pixelSize: 15
+                echoMode: TextInput.Password
+                selectByMouse: true
+                clip: true
 
+                Keys.onReturnPressed: sddm.login(userInput.text, passwordInput.text, root.sessionIndex)
+                Keys.onEnterPressed: sddm.login(userInput.text, passwordInput.text, root.sessionIndex)
+                KeyNavigation.backtab: userInput
+                KeyNavigation.tab: loginButton
+            }
+        }
+
+        // WM / SESSION -- same clipped-card pattern as the username field
+        Item {
+            anchors.horizontalCenter: parent.horizontalCenter
+            width: 220
+            height: sessionCard.height
+
+            Rectangle {
+                id: sessionCard
+                width: parent.width
+                height: sessionColumn.height
+                radius: 14
+                color: "#b3000000"
+                border.width: 1
+                border.color: "#33ffffff"
+                clip: true
+
+                Column {
+                    id: sessionColumn
+                    width: parent.width
+
+                    Item {
+                        width: parent.width
+                        height: 38
+
+                        Row {
+                            anchors.fill: parent
+                            anchors.leftMargin: 16
+                            anchors.rightMargin: 14
+                            spacing: 6
+
+                            Text {
+                                width: parent.width - sessionArrow.width - 6
+                                anchors.verticalCenter: parent.verticalCenter
+                                text: root.sessionName
+                                color: "white"
+                                font.family: "CaskaydiaCove Nerd Font"
+                                font.pixelSize: 14
+                                elide: Text.ElideRight
+                            }
+
+                            Text {
+                                id: sessionArrow
+                                anchors.verticalCenter: parent.verticalCenter
+                                text: "▾"
+                                color: "white"
+                                font.pixelSize: 12
+                                rotation: sessionList.visible ? 180 : 0
+                                Behavior on rotation { NumberAnimation { duration: 120 } }
+
+                                MouseArea {
+                                    anchors.fill: parent
+                                    anchors.margins: -8
+                                    onClicked: sessionList.visible = !sessionList.visible
+                                }
+                            }
+                        }
+                    }
+
+                    Rectangle {
+                        visible: sessionList.visible
+                        width: parent.width
+                        height: 1
+                        color: "#26ffffff"
+                    }
+
+                    Column {
+                        id: sessionList
+                        visible: false
+                        width: parent.width
+                        padding: 4
+                        spacing: 2
+
+                        Repeater {
+                            id: sessionRepeater
                             model: sessionModel
-                            index: sessionModel.lastIndex
+                            delegate: Rectangle {
+                                width: sessionList.width - 8
+                                height: 30
+                                radius: 8
+                                color: sessionRowMouse.containsMouse ? "#1fffffff" : "#00000000"
 
-                            KeyNavigation.backtab: password; KeyNavigation.tab: layoutBox
-                        }
-                    }
+                                Text {
+                                    anchors.fill: parent
+                                    leftPadding: 10
+                                    verticalAlignment: Text.AlignVCenter
+                                    text: name
+                                    color: "white"
+                                    font.family: "CaskaydiaCove Nerd Font"
+                                    font.pixelSize: 13
+                                }
 
-                    Column {
-                        z: 101
-                        width: parent.width * 0.7
-                        spacing : 4
-                        anchors.bottom: parent.bottom
+                                Component.onCompleted: if (index === root.sessionIndex) root.sessionName = name
 
-                        Text {
-                            id: lblLayout
-                            width: parent.width
-                            text: textConstants.layout
-                            wrapMode: TextEdit.WordWrap
-                            font.bold: true
-                            font.pixelSize: 12
-                        }
-
-                        LayoutBox {
-                            id: layoutBox
-                            width: parent.width; height: 30
-                            font.pixelSize: 14
-
-                            arrowIcon: "angle-down.png"
-
-                            KeyNavigation.backtab: session; KeyNavigation.tab: loginButton
+                                MouseArea {
+                                    id: sessionRowMouse
+                                    anchors.fill: parent
+                                    hoverEnabled: true
+                                    onClicked: {
+                                        root.sessionIndex = index
+                                        root.sessionName = name
+                                        sessionList.visible = false
+                                    }
+                                }
+                            }
                         }
                     }
                 }
+            }
+        }
 
-                Column {
-                    width: parent.width
-                    Text {
-                        id: errorMessage
-                        anchors.horizontalCenter: parent.horizontalCenter
-                        text: textConstants.prompt
-                        font.pixelSize: 10
-                    }
+        // STATUS (login failed / info messages)
+        Text {
+            anchors.horizontalCenter: parent.horizontalCenter
+            text: root.statusText
+            color: root.statusColor
+            font.family: "CaskaydiaCove Nerd Font"
+            font.pixelSize: 13
+            height: 16
+        }
+
+        // LOGIN + POWER ROW, same glyph family as waybar's custom/power (⏻)
+        Row {
+            anchors.horizontalCenter: parent.horizontalCenter
+            spacing: 18
+
+            Text {
+                id: loginButton
+                text: "Log In"
+                color: "white"
+                font.family: "CaskaydiaCove Nerd Font"
+                font.pixelSize: 15
+
+                MouseArea {
+                    anchors.fill: parent
+                    anchors.margins: -8
+                    onClicked: sddm.login(userInput.text, passwordInput.text, root.sessionIndex)
                 }
+            }
 
-                Row {
-                    spacing: 4
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    property int btnWidth: Math.max(loginButton.implicitWidth,
-                                                    shutdownButton.implicitWidth,
-                                                    rebootButton.implicitWidth, 80) + 8
-                    Button {
-                        id: loginButton
-                        text: textConstants.login
-                        width: parent.btnWidth
+            Text {
+                text: "⏻"
+                color: "white"
+                font.pixelSize: 18
+                visible: sddm.canPowerOff
 
-                        onClicked: sddm.login(name.text, password.text, sessionIndex)
+                MouseArea {
+                    anchors.fill: parent
+                    anchors.margins: -8
+                    onClicked: sddm.powerOff()
+                }
+            }
 
-                        KeyNavigation.backtab: layoutBox; KeyNavigation.tab: shutdownButton
-                    }
+            Text {
+                text: "⟳"
+                color: "white"
+                font.pixelSize: 18
+                visible: sddm.canReboot
 
-                    Button {
-                        id: shutdownButton
-                        text: textConstants.shutdown
-                        width: parent.btnWidth
+                MouseArea {
+                    anchors.fill: parent
+                    anchors.margins: -8
+                    onClicked: sddm.reboot()
+                }
+            }
 
-                        onClicked: sddm.powerOff()
+            Text {
+                text: "⏾"
+                color: "white"
+                font.pixelSize: 18
+                visible: sddm.canSuspend
 
-                        KeyNavigation.backtab: loginButton; KeyNavigation.tab: rebootButton
-                    }
-
-                    Button {
-                        id: rebootButton
-                        text: textConstants.reboot
-                        width: parent.btnWidth
-
-                        onClicked: sddm.reboot()
-
-                        KeyNavigation.backtab: shutdownButton; KeyNavigation.tab: name
-                    }
+                MouseArea {
+                    anchors.fill: parent
+                    anchors.margins: -8
+                    onClicked: sddm.suspend()
                 }
             }
         }
     }
 
     Component.onCompleted: {
-        if (name.text == "")
-            name.focus = true
+        if (userInput.text === "")
+            userInput.forceActiveFocus()
         else
-            password.focus = true
+            passwordInput.forceActiveFocus()
     }
 }
