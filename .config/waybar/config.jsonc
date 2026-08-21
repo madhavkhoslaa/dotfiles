@@ -7,7 +7,7 @@
 
     "modules-left": ["cpu", "custom/gpu", "memory", "temperature"],
     "modules-center": ["clock"],
-    "modules-right": ["mpris", "custom/external-monitor", "network", "bluetooth", "backlight", "battery", "pulseaudio", "custom/power"],
+    "modules-right": ["mpris", "custom/external-monitor", "network", "bluetooth", "backlight", "custom/kbd-backlight", "battery", "pulseaudio", "custom/power"],
 
     "cpu": {
         "format": "CPU {usage}%",
@@ -69,6 +69,13 @@
         "format-icons": ["", "", "", "", "", "", ""],
         "on-scroll-up": "~/.config/waybar/scripts/brightness.sh up",
         "on-scroll-down": "~/.config/waybar/scripts/brightness.sh down"
+    },
+
+    "custom/kbd-backlight": {
+        "exec": "~/.config/waybar/scripts/kbd-backlight.sh",
+        "return-type": "json",
+        "signal": 9,
+        "on-click": "~/.config/waybar/scripts/kbd-backlight.sh toggle"
     },
 
     "custom/external-monitor": {

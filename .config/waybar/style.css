@@ -44,6 +44,7 @@ window#waybar {
 #network,
 #bluetooth,
 #backlight,
+#custom-kbd-backlight,
 #battery,
 #custom-external-monitor {
     padding: 0 10px;
@@ -112,6 +113,22 @@ window#waybar {
     font-weight: normal;
 }
 
+/* Keyboard backlight */
+#custom-kbd-backlight.off {
+    color: #6c7086;
+    font-weight: normal;
+}
+
+#custom-kbd-backlight.low {
+    color: #ffffff;
+    font-weight: normal;
+}
+
+#custom-kbd-backlight.high {
+    color: #f1fa8c;
+    font-weight: bold;
+}
+
 /* Tooltip */
 tooltip {
     background-color: rgba(20, 20, 20, 0.4);
@@ -140,6 +157,7 @@ tooltip label {
 #network,
 #bluetooth,
 #backlight,
+#custom-kbd-backlight,
 #battery,
 #custom-external-monitor {
     transition: font-size 0.15s ease;
@@ -156,6 +174,7 @@ tooltip label {
 #network:hover,
 #bluetooth:hover,
 #backlight:hover,
+#custom-kbd-backlight:hover,
 #battery:hover,
 #custom-external-monitor:hover {
     font-size: 14px;
