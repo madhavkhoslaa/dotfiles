@@ -199,6 +199,29 @@ if [[ -d "$REPO_DIR/Wallpapers" ]]; then
 fi
 
 # --------------------------------------------------
+# Enable networking services
+# --------------------------------------------------
+#
+# `pacman -S networkmanager bluez` does not enable or start either
+# service on its own -- Arch's vendor presets ship both disabled. Without
+# this, nmcli/wifi_menu.py and bluetoothctl/blueman have nothing running
+# to talk to right after a fresh install.
+
+if command -v systemctl >/dev/null 2>&1; then
+    info "Enabling NetworkManager..."
+    sudo systemctl enable --now NetworkManager.service
+    success "NetworkManager configured."
+
+    if command -v bluetoothctl >/dev/null 2>&1; then
+        info "Enabling Bluetooth..."
+        sudo systemctl enable --now bluetooth.service
+        success "Bluetooth configured."
+    fi
+else
+    warning "systemctl was not found; skipping NetworkManager/Bluetooth service setup."
+fi
+
+# --------------------------------------------------
 # Enable user audio services
 # --------------------------------------------------
 
