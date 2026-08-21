@@ -72,25 +72,25 @@
     },
 
     "network": {
-        "format-wifi": " Connected",
-        "format-ethernet": " Connected",
-        "format-disconnected": " Disconnected",
-        "format-disabled": " Disconnected",
+        "format-wifi": "",
+        "format-ethernet": "",
+        "format-disconnected": "",
+        "format-disabled": "",
         "tooltip-format": "{ifname} via {gwaddr}",
         "tooltip-format-wifi": "{essid} ({signalStrength}%)",
         "tooltip-format-disconnected": "Disconnected",
-        "on-click": "kitty --title WifiMenu -e ~/.config/waybar/scripts/wifi-menu.sh"
+        "on-click": "kitty --title WifiMenu -e python3 ~/.config/waybar/scripts/wifi_menu.py"
     },
 
     "bluetooth": {
-        "format-on": " On",
-        "format-off": " Off",
-        "format-disabled": " Off",
-        "format-connected": " Connected",
-        "format-connected-battery": " Connected {device_battery_percentage}%",
+        "format-on": "",
+        "format-off": "",
+        "format-disabled": "",
+        "format-connected": "",
+        "format-connected-battery": " {device_battery_percentage}%",
         "tooltip-format": "{controller_alias}\t{controller_address}",
         "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
-        "on-click": "kitty --title BluetoothMenu -e ~/.config/waybar/scripts/bluetooth-menu.sh"
+        "on-click": "kitty --title BluetoothMenu -e python3 ~/.config/waybar/scripts/bluetooth_menu.py"
     },
 
     "pulseaudio": {
