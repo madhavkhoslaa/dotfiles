@@ -115,6 +115,7 @@ Grim
 Slurp
 Cliphist
 wl-clipboard
+fastfetch
 ```
 
 ---

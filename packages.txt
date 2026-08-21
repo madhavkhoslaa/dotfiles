@@ -86,5 +86,6 @@ noto-fonts-emoji
 git
 curl
 unzip
+fastfetch
 
 

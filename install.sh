@@ -167,6 +167,20 @@ cp -a "$REPO_DIR/.config/." "$CONFIG_DIR/"
 success "Dotfiles installed."
 
 # --------------------------------------------------
+# Install ~/.bashrc
+# --------------------------------------------------
+
+if [[ -f "$REPO_DIR/.bashrc" ]]; then
+    if [[ -f "$HOME/.bashrc" ]]; then
+        mkdir -p "$BACKUP_DIR"
+        cp -a "$HOME/.bashrc" "$BACKUP_DIR/.bashrc"
+    fi
+
+    cp -a "$REPO_DIR/.bashrc" "$HOME/.bashrc"
+    success "~/.bashrc installed."
+fi
+
+# --------------------------------------------------
 # Fix up hardcoded paths in installed config
 # --------------------------------------------------
 
