@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Curses Bluetooth picker backed by bluetoothctl. Up/Down select, Enter
-pairs/trusts/connects (or disconnects if already connected), q quits."""
+pairs/trusts/connects (or disconnects if already connected), p toggles
+the adapter on/off, q quits."""
 
 import curses
 import re
@@ -28,6 +29,23 @@ def list_macs(*filter_args):
         if m:
             macs.add(m.group(1))
     return macs
+
+
+def get_power():
+    out = run("show").stdout
+    for line in out.splitlines():
+        line = line.strip()
+        if line.startswith("Powered:"):
+            return line.split(":", 1)[1].strip().lower() == "yes"
+    return True
+
+
+def toggle_power(stdscr):
+    new_state = "off" if get_power() else "on"
+    status_line(stdscr, f"Turning Bluetooth {new_state}...")
+    run("power", new_state, timeout=10)
+    if new_state == "on":
+        run("--timeout", "4", "scan", "on", timeout=8)
 
 
 def get_devices():
@@ -74,15 +92,18 @@ def toggle_connection(stdscr, dev):
     stdscr.getch()
 
 
-HELP = "Up/Down: select   Enter: connect/disconnect   q: quit"
+HELP = "Up/Down: select   Enter: connect/disconnect   p: toggle bluetooth   q: quit"
 
 
-def draw(stdscr, devices, selected, error):
+def draw(stdscr, devices, selected, error, powered):
     stdscr.erase()
     h, w = stdscr.getmaxyx()
-    stdscr.addnstr(0, 0, "Bluetooth", w - 1, curses.A_BOLD)
+    state = "on" if powered else "off"
+    stdscr.addnstr(0, 0, f"Bluetooth [{state}]", w - 1, curses.A_BOLD)
 
-    if error:
+    if not powered:
+        stdscr.addnstr(2, 2, "Bluetooth is off. Press p to turn on.", w - 3)
+    elif error:
         stdscr.addnstr(2, 2, error, w - 3)
     elif not devices:
         stdscr.addnstr(2, 2, "No devices found.", w - 3)
@@ -108,18 +129,25 @@ def main(stdscr):
     curses.curs_set(0)
     stdscr.keypad(True)
 
-    status_line(stdscr, "Powering on and scanning...")
-    run("power", "on")
-    run("--timeout", "4", "scan", "on", timeout=8)
+    powered = get_power()
+    devices, error = ([], None)
+    if powered:
+        status_line(stdscr, "Scanning...")
+        run("--timeout", "4", "scan", "on", timeout=8)
+        devices, error = get_devices()
 
-    devices, error = get_devices()
     selected = 0
     while True:
-        draw(stdscr, devices, selected, error)
+        draw(stdscr, devices, selected, error, powered)
         ch = stdscr.getch()
 
         if ch in (ord("q"), ord("Q")):
             break
+        elif ch in (ord("p"), ord("P")):
+            toggle_power(stdscr)
+            powered = get_power()
+            devices, error = get_devices() if powered else ([], None)
+            selected = min(selected, max(len(devices) - 1, 0))
         elif ch in (curses.KEY_UP, ord("k")) and devices:
             selected = (selected - 1) % len(devices)
         elif ch in (curses.KEY_DOWN, ord("j")) and devices:

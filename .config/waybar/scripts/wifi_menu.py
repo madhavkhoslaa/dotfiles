@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Curses Wi-Fi picker backed by iwctl. Up/Down select, Enter connects
-(prompting for a passphrase when the network is secured), q quits."""
+(prompting for a passphrase when the network is secured), p toggles the
+radio on/off, q quits."""
 
 import curses
 import re
@@ -24,6 +25,23 @@ def get_device():
         if len(parts) >= 5 and parts[-1] == "station":
             return parts[0]
     return "wlan0"
+
+
+def get_power(device):
+    out = ANSI_RE.sub("", run("device", "list").stdout)
+    for line in out.splitlines():
+        parts = line.split()
+        if parts and parts[0] == device and len(parts) > 2:
+            return parts[2].lower() == "on"
+    return True
+
+
+def toggle_power(stdscr, device):
+    new_state = "off" if get_power(device) else "on"
+    status_line(stdscr, f"Turning Wi-Fi {new_state}...")
+    run("device", device, "set-property", "Powered", new_state, timeout=10)
+    if new_state == "on":
+        run("station", device, "scan")
 
 
 def get_networks(device):
@@ -116,15 +134,18 @@ def connect(stdscr, device, net):
     stdscr.getch()
 
 
-HELP = "Up/Down: select   Enter: connect   q: quit"
+HELP = "Up/Down: select   Enter: connect   p: toggle wifi   q: quit"
 
 
-def draw(stdscr, device, networks, selected):
+def draw(stdscr, device, networks, selected, powered):
     stdscr.erase()
     h, w = stdscr.getmaxyx()
-    stdscr.addnstr(0, 0, f"Wi-Fi ({device})", w - 1, curses.A_BOLD)
+    state = "on" if powered else "off"
+    stdscr.addnstr(0, 0, f"Wi-Fi ({device}) [{state}]", w - 1, curses.A_BOLD)
 
-    if not networks:
+    if not powered:
+        stdscr.addnstr(2, 2, "Wi-Fi is off. Press p to turn on.", w - 3)
+    elif not networks:
         stdscr.addnstr(2, 2, "No networks found.", w - 3)
     for i, net in enumerate(networks):
         row = 2 + i
@@ -144,17 +165,25 @@ def main(stdscr):
     stdscr.keypad(True)
 
     device = get_device()
-    status_line(stdscr, "Scanning...")
-    run("station", device, "scan")
-    networks = get_networks(device)
+    powered = get_power(device)
+    networks = []
+    if powered:
+        status_line(stdscr, "Scanning...")
+        run("station", device, "scan")
+        networks = get_networks(device)
 
     selected = 0
     while True:
-        draw(stdscr, device, networks, selected)
+        draw(stdscr, device, networks, selected, powered)
         ch = stdscr.getch()
 
         if ch in (ord("q"), ord("Q")):
             break
+        elif ch in (ord("p"), ord("P")):
+            toggle_power(stdscr, device)
+            powered = get_power(device)
+            networks = get_networks(device) if powered else []
+            selected = min(selected, max(len(networks) - 1, 0))
         elif ch in (curses.KEY_UP, ord("k")) and networks:
             selected = (selected - 1) % len(networks)
         elif ch in (curses.KEY_DOWN, ord("j")) and networks:
