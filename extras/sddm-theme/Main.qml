@@ -14,8 +14,13 @@ Rectangle {
 
     property int sessionIndex: sessionModel.lastIndex
     property string sessionName: ""
-    property string statusText: ""
-    property color statusColor: "white"
+    // Idle hint instead of a blank status line -- fingerprint and password
+    // are both live at all times (fprintd runs alongside the password
+    // field), so say so up front instead of leaving the user to guess
+    // which one the greeter is listening for.
+    property string idleHint: "Type your password or scan a fingerprint"
+    property string statusText: idleHint
+    property color statusColor: "#aaaaaa"
 
     Image {
         id: bg
@@ -40,9 +45,27 @@ Rectangle {
         id: clockTick
     }
 
+    // fprintd retries on its own (a misread finger is not a login failure --
+    // it just asks you to touch the sensor again), so its retry prompts
+    // arrive here via onInformationMessage alongside genuine PAM notices.
+    // Coloring every one of those the same alarming red as onLoginFailed is
+    // what made a normal retry read as "your fingerprint is wrong". Give
+    // retries a neutral amber and reserve red for an actual failed login,
+    // then fade back to the idle hint so the status line never gets stuck
+    // looking like a persistent error.
+    Timer {
+        id: statusRevert
+        interval: 3000
+        onTriggered: {
+            root.statusColor = "#aaaaaa"
+            root.statusText = root.idleHint
+        }
+    }
+
     Connections {
         target: sddm
         function onLoginSucceeded() {
+            statusRevert.stop()
             root.statusColor = "white"
             root.statusText = "Logging in..."
         }
@@ -50,10 +73,12 @@ Rectangle {
             passwordInput.text = ""
             root.statusColor = "#ff8080"
             root.statusText = "Login failed"
+            statusRevert.restart()
         }
         function onInformationMessage(message) {
-            root.statusColor = "#ff8080"
+            root.statusColor = "#ffcc66"
             root.statusText = message
+            statusRevert.restart()
         }
     }
 
