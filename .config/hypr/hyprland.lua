@@ -5,10 +5,11 @@
 -- Upstream disabled eDP-1 and required an external HDMI-A-1 monitor,
 -- which blanks the screen on a laptop-only setup.
 --
--- Monitor layout is owned by kanshi (~/.config/kanshi/config), not hardcoded
--- here, so switching locations/docks just means adding a kanshi profile.
--- It's started first in the autostart block below and applies within
--- milliseconds of launch; no monitor lines needed here as a fallback.
+-- Monitor layout is handled by scripts/monitor-watch.py, which watches
+-- Hyprland's event socket for hotplug and opens a Mirror/Extend picker
+-- (scripts/monitor-popup.sh) on connect, or makes eDP-1 sole leader again
+-- on disconnect. No monitor lines needed here - it reacts to whatever's
+-- plugged in and picks the highest refresh rate automatically.
 
 ---- MY PROGRAMS ----
 
@@ -22,7 +23,7 @@ browser    = "brave"
 ---- AUTOSTART ----
 
 hl.on("hyprland.start", function()
-    hl.exec_cmd("kanshi")
+    hl.exec_cmd("sh -c 'python3 $HOME/.config/hypr/scripts/monitor-watch.py'")
     hl.exec_cmd("waybar")
     hl.exec_cmd("dunst")
     hl.exec_cmd("nm-applet")

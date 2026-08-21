@@ -7,7 +7,7 @@
 
     "modules-left": ["cpu", "custom/gpu", "memory", "temperature"],
     "modules-center": ["clock"],
-    "modules-right": ["mpris", "network", "bluetooth", "backlight", "battery", "pulseaudio", "custom/power"],
+    "modules-right": ["mpris", "custom/external-monitor", "network", "bluetooth", "backlight", "battery", "pulseaudio", "custom/power"],
 
     "cpu": {
         "format": "CPU {usage}%",
@@ -69,6 +69,14 @@
         "format-icons": ["", "", "", "", "", "", ""],
         "on-scroll-up": "~/.config/waybar/scripts/brightness.sh up",
         "on-scroll-down": "~/.config/waybar/scripts/brightness.sh down"
+    },
+
+    "custom/external-monitor": {
+        "exec": "~/.config/hypr/scripts/external-monitor-status.sh",
+        "return-type": "json",
+        "signal": 8,
+        "interval": 15,
+        "on-click": "~/.config/hypr/scripts/external-monitor-click.sh"
     },
 
     "network": {
