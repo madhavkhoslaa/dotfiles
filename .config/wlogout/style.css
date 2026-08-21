@@ -1,4 +1,4 @@
-/* bind = $mod, Escape, exec, wlogout -b 1 -c 20 -r 20 -L 1700 -R 1700 -T 325 -B 325 */
+/* bind = $mod, Escape, exec, wlogout -b 3 -c 20 -r 20 -L 480 -R 480 -T 320 -B 320 */
 * { 
     background-image: none;
     box-shadow: none;
@@ -12,20 +12,20 @@ window {
 button {
     margin: 0;
 
-    min-width: 100px;
-    min-height: 100px;
+    min-width: 64px;
+    min-height: 64px;
 
-    border-radius: 100px;
-    border: 1px solid transparent;
+    border-radius: 64px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
 
     color: #FFFFFF;
     background-color: rgba(12, 12, 12, 0.4);
 
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 20%;
+    background-size: 42%;
 
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 
     transition: all 0.2s ease;
 }
@@ -34,7 +34,7 @@ button:hover,
 button:focus,
 button:active {
     background-color: rgba(255, 255, 255, 0.12);
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.55);
     outline: none;
 }
 

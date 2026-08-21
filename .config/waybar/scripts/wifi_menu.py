@@ -116,10 +116,13 @@ def connect(stdscr, device, net):
     stdscr.getch()
 
 
+HELP = "Up/Down: select   Enter: connect   q: quit"
+
+
 def draw(stdscr, device, networks, selected):
     stdscr.erase()
     h, w = stdscr.getmaxyx()
-    stdscr.addnstr(0, 0, f"Wi-Fi ({device}) -- Up/Down select, Enter connect, q quit", w - 1, curses.A_BOLD)
+    stdscr.addnstr(0, 0, f"Wi-Fi ({device})", w - 1, curses.A_BOLD)
 
     if not networks:
         stdscr.addnstr(2, 2, "No networks found.", w - 3)
@@ -131,6 +134,8 @@ def draw(stdscr, device, networks, selected):
         label = f"{marker} {net['ssid']:<32} {net['security']:<8} {net['signal']}"
         attr = curses.A_REVERSE if i == selected else curses.A_NORMAL
         stdscr.addnstr(row, 2, label, w - 3, attr)
+
+    stdscr.addnstr(h - 1, 0, HELP.ljust(w - 1), w - 1, curses.A_REVERSE)
     stdscr.refresh()
 
 

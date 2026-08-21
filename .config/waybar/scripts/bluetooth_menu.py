@@ -74,10 +74,13 @@ def toggle_connection(stdscr, dev):
     stdscr.getch()
 
 
+HELP = "Up/Down: select   Enter: connect/disconnect   q: quit"
+
+
 def draw(stdscr, devices, selected, error):
     stdscr.erase()
     h, w = stdscr.getmaxyx()
-    stdscr.addnstr(0, 0, "Bluetooth -- Up/Down select, Enter connect/disconnect, q quit", w - 1, curses.A_BOLD)
+    stdscr.addnstr(0, 0, "Bluetooth", w - 1, curses.A_BOLD)
 
     if error:
         stdscr.addnstr(2, 2, error, w - 3)
@@ -96,6 +99,8 @@ def draw(stdscr, devices, selected, error):
         label = f"{dev['name']} ({dev['mac']}){tag}"
         attr = curses.A_REVERSE if i == selected else curses.A_NORMAL
         stdscr.addnstr(row, 2, label, w - 3, attr)
+
+    stdscr.addnstr(h - 1, 0, HELP.ljust(w - 1), w - 1, curses.A_REVERSE)
     stdscr.refresh()
 
 
