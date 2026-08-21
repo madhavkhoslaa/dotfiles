@@ -30,6 +30,9 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("/usr/lib/polkit-kde-authentication-agent-1")
 
     hl.exec_cmd("awww-daemon")
+    -- awww caches the last-set wallpaper on disk (~/.cache/awww); restore
+    -- it once the daemon is up so the same wallpaper persists across boots.
+    hl.exec_cmd("sh -c 'sleep 1 && awww restore'")
 end)
 
 ---- ENVIRONMENT VARIABLES ----
