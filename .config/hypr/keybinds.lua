@@ -105,7 +105,24 @@ end
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"), { locked = true, repeating = true })
 hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"), { locked = true, repeating = true })
 hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"), { locked = true })
+hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"), { locked = true })
 
 hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true })
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
+
+-- Brightness keys -- reuse the waybar backlight module's script so the
+-- floor-clamping behaviour (never fully dark on the laptop panel, see
+-- scripts/monitor-popup.sh) stays in one place instead of duplicating a
+-- second brightnessctl call with different clamp logic.
+hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd(home .. "/.config/waybar/scripts/brightness.sh up"), { locked = true, repeating = true })
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd(home .. "/.config/waybar/scripts/brightness.sh down"), { locked = true, repeating = true })
+
+-- External display switch -- reopens the same mirror/extend picker as
+-- clicking the waybar external-monitor module.
+hl.bind("XF86Display", hl.dsp.exec_cmd(home .. "/.config/hypr/scripts/external-monitor-click.sh"), { locked = true })
+
+-- Wireless radio toggle (airplane-mode key). Bluetooth's own default-off
+-- policy is handled at the service level, not here -- see the "Keep
+-- bluetoothd running but radio off by default" commit.
+hl.bind("XF86WLAN", hl.dsp.exec_cmd("rfkill toggle wifi"), { locked = true })
