@@ -7,7 +7,7 @@ LAPTOP="eDP-1"
 mon=$(hyprctl monitors all -j | jq -r --arg l "$LAPTOP" '[.[] | select(.name != $l)][0].name // empty')
 
 if [ -n "$mon" ]; then
-    printf '{"text":"  ","tooltip":"External monitor: %s\\nClick to reconfigure","class":"connected","alt":"connected"}\n' "$mon"
+    printf '{"text":"\xf0\x9f\x96\xa5 ","tooltip":"External monitor: %s\\nClick to reconfigure","class":"connected","alt":"connected"}\n' "$mon"
 else
     printf '{"text":"","tooltip":"","class":"disconnected","alt":"disconnected"}\n'
 fi
