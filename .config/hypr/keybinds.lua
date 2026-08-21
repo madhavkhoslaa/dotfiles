@@ -127,3 +127,11 @@ hl.bind("XF86Display", hl.dsp.exec_cmd(home .. "/.config/hypr/scripts/external-m
 -- policy is handled at the service level, not here -- see the "Keep
 -- bluetoothd running but radio off by default" commit.
 hl.bind("XF86WLAN", hl.dsp.exec_cmd("rfkill toggle wifi"), { locked = true })
+
+-- Power button: tap to lock, hold ~1.5s to power off. Needs
+-- HandlePowerKey=ignore in logind.conf (see /etc/systemd/logind.conf.d/) --
+-- otherwise logind poweroffs on the raw keypress before this ever fires.
+-- VERIFY: XF86PowerOff is the standard X keysym for the ACPI power button,
+-- but confirm on this hardware (e.g. via `wev`) if the bind doesn't fire.
+hl.bind("XF86PowerOff", hl.dsp.exec_cmd(home .. "/.config/hypr/scripts/power-button.sh press"), { locked = true })
+hl.bind("XF86PowerOff", hl.dsp.exec_cmd(home .. "/.config/hypr/scripts/power-button.sh release"), { locked = true, release = true })
