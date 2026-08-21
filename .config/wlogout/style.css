@@ -39,14 +39,14 @@ button:active {
 }
 
 #shutdown {
-    background-image: url("/home/rp34/.config/wlogout/icons/shutdown.png");
+    background-image: url("icons/shutdown.png");
 }
 
 #reboot {
-    background-image: url("/home/rp34/.config/wlogout/icons/reboot.png");
+    background-image: url("icons/reboot.png");
 }
 
 #logout {
-    background-image: url("/home/rp34/.config/wlogout/icons/logout.png");
+    background-image: url("icons/logout.png");
 }
 

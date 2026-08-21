@@ -167,6 +167,25 @@ cp -a "$REPO_DIR/.config/." "$CONFIG_DIR/"
 success "Dotfiles installed."
 
 # --------------------------------------------------
+# Fix up hardcoded paths in installed config
+# --------------------------------------------------
+
+QUICKPAPER_CONFIG="$CONFIG_DIR/quickshell/hyprquickpaper/config.json"
+
+if [[ -f "$QUICKPAPER_CONFIG" ]] && command -v jq >/dev/null 2>&1; then
+    info "Fixing wallpaper picker paths..."
+
+    tmp="$(mktemp)"
+    jq \
+        --arg wallpaper_path "$HOME/Pictures/Wallpapers/" \
+        --arg cache_path "$HOME/.cache/quickshell/thumbs/" \
+        '.wallpaper_path = $wallpaper_path | .cache_path = $cache_path' \
+        "$QUICKPAPER_CONFIG" > "$tmp" && mv "$tmp" "$QUICKPAPER_CONFIG"
+
+    success "Wallpaper picker paths fixed."
+fi
+
+# --------------------------------------------------
 # Wallpapers
 # --------------------------------------------------
 

@@ -1,11 +1,14 @@
 -- ~/.config/hypr/hyprland.lua
 -- Docs: https://wiki.hypr.land/Configuring/Start/
 
--- Old: monitor = eDP-1,disable
--- Old: monitor = HDMI-A-1,preferred,auto,1
+-- Patched for ThinkPad E15: keep the built-in panel always on.
+-- Upstream disabled eDP-1 and required an external HDMI-A-1 monitor,
+-- which blanks the screen on a laptop-only setup.
+-- HDMI-A-1 is only applied when actually connected (docked), and never
+-- disables eDP-1.
 
-hl.monitor({ output = "eDP-1", disabled = true })
-hl.monitor({ output = "HDMI-A-1", mode = "preferred", position = "auto", scale = 1 })
+hl.monitor({ output = "eDP-1", mode = "preferred", position = "auto", scale = "auto" })
+hl.monitor({ output = "HDMI-A-1", mode = "preferred", position = "auto", scale = "auto" })
 
 ---- MY PROGRAMS ----
 

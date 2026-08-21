@@ -40,7 +40,11 @@ window#waybar {
 #pulseaudio,
 #mpris,
 #custom-power,
-#temperature {
+#temperature,
+#network,
+#bluetooth,
+#backlight,
+#battery {
     padding: 0 10px;
     margin: 0 2px;
 }
@@ -67,6 +71,46 @@ window#waybar {
     color: #ff5555;
 }
 
+/* Battery */
+#battery.warning {
+    color: #f1fa8c;
+}
+
+#battery.critical {
+    color: #ff5555;
+}
+
+#battery.charging {
+    color: #50fa7b;
+}
+
+/* Network */
+#network.wifi,
+#network.ethernet {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+#network.disconnected,
+#network.disabled,
+#network.linked {
+    color: #6c7086;
+    font-weight: normal;
+}
+
+/* Bluetooth */
+#bluetooth.on,
+#bluetooth.connected {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+#bluetooth.off,
+#bluetooth.disabled {
+    color: #6c7086;
+    font-weight: normal;
+}
+
 /* Tooltip */
 tooltip {
     background-color: rgba(20, 20, 20, 0.4);
@@ -91,7 +135,11 @@ tooltip label {
 #clock,
 #pulseaudio,
 #mpris,
-#custom-power {
+#custom-power,
+#network,
+#bluetooth,
+#backlight,
+#battery {
     transition: font-size 0.15s ease;
 }
 
@@ -102,6 +150,10 @@ tooltip label {
 #clock:hover,
 #pulseaudio:hover,
 #mpris:hover,
-#custom-power:hover {
+#custom-power:hover,
+#network:hover,
+#bluetooth:hover,
+#backlight:hover,
+#battery:hover {
     font-size: 14px;
 }

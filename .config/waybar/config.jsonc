@@ -7,7 +7,7 @@
 
     "modules-left": ["cpu", "custom/gpu", "memory", "temperature"],
     "modules-center": ["clock"],
-    "modules-right": ["mpris", "pulseaudio", "custom/power"],
+    "modules-right": ["mpris", "network", "bluetooth", "backlight", "battery", "pulseaudio", "custom/power"],
 
     "cpu": {
         "format": "CPU {usage}%",
@@ -49,6 +49,48 @@
         "max-length": 50,
         "tooltip": false,
         "interval": 2
+    },
+
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-icons": ["", "", "", "", ""],
+        "tooltip-format": "{capacity}% - {time}"
+    },
+
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{icon} {percent}%",
+        "format-icons": ["", "", "", "", "", "", ""],
+        "on-scroll-up": "~/.config/waybar/scripts/brightness.sh up",
+        "on-scroll-down": "~/.config/waybar/scripts/brightness.sh down"
+    },
+
+    "network": {
+        "format-wifi": " Connected",
+        "format-ethernet": " Connected",
+        "format-disconnected": " Disconnected",
+        "format-disabled": " Disconnected",
+        "tooltip-format": "{ifname} via {gwaddr}",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+        "tooltip-format-disconnected": "Disconnected",
+        "on-click": "kitty --title WifiMenu -e ~/.config/waybar/scripts/wifi-menu.sh"
+    },
+
+    "bluetooth": {
+        "format-on": " On",
+        "format-off": " Off",
+        "format-disabled": " Off",
+        "format-connected": " Connected",
+        "format-connected-battery": " Connected {device_battery_percentage}%",
+        "tooltip-format": "{controller_alias}\t{controller_address}",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+        "on-click": "kitty --title BluetoothMenu -e ~/.config/waybar/scripts/bluetooth-menu.sh"
     },
 
     "pulseaudio": {

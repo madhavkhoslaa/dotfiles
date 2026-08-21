@@ -21,6 +21,25 @@ xorg-xwayland
 awww
 grim
 slurp
+jq
+imagemagick
+
+# --------------------------------------------------
+# Network / Bluetooth
+# --------------------------------------------------
+
+networkmanager
+network-manager-applet
+iwd
+bluez
+bluez-utils
+blueman
+
+# --------------------------------------------------
+# Brightness
+# --------------------------------------------------
+
+brightnessctl
 
 # --------------------------------------------------
 # Clipboard
