@@ -25,7 +25,7 @@ configuration {
 }
 
 * {
-    bg: #00000020;
+    bg: #000000E6;
     bg-alt: #00000000;
     bg-hover: #242832FF;
     bg-selected: #FFFFFF10;
