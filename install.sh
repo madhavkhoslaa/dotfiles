@@ -216,13 +216,15 @@ fi
 # Enable networking services
 # --------------------------------------------------
 #
-# `pacman -S networkmanager bluez` does not enable or start NetworkManager
-# on its own -- Arch's vendor presets ship it disabled. Without this,
-# nmcli/wifi_menu.py have nothing running to talk to right after a fresh
-# install.
+# `pacman -S networkmanager bluez` does not enable or start either
+# service on its own -- Arch's vendor presets ship both disabled. Without
+# this, nmcli/wifi_menu.py and bluetoothctl/blueman have nothing running
+# to talk to right after a fresh install.
 #
-# Bluetooth is intentionally NOT enabled on boot; start it manually with
-# `sudo systemctl start bluetooth` when needed.
+# bluetoothd itself stays running (so blueman/bluetoothctl work without
+# a manual `systemctl start`), but AutoEnable in /etc/bluetooth/main.conf
+# is set to false so it doesn't power the radio on at boot -- turn it on
+# from blueman or `bluetoothctl power on` when needed.
 
 if command -v systemctl >/dev/null 2>&1; then
     info "Enabling NetworkManager..."
@@ -230,9 +232,20 @@ if command -v systemctl >/dev/null 2>&1; then
     success "NetworkManager configured."
 
     if command -v bluetoothctl >/dev/null 2>&1; then
-        info "Keeping Bluetooth off after boot..."
-        sudo systemctl disable --now bluetooth.service
-        success "Bluetooth disabled (start manually with: sudo systemctl start bluetooth)."
+        info "Enabling Bluetooth (radio off by default)..."
+        sudo systemctl enable --now bluetooth.service
+
+        BT_CONF="/etc/bluetooth/main.conf"
+        if [[ -f "$BT_CONF" ]] && grep -q "^AutoEnable=" "$BT_CONF"; then
+            sudo sed -i 's/^AutoEnable=.*/AutoEnable=false/' "$BT_CONF"
+        elif [[ -f "$BT_CONF" ]] && grep -q "^#AutoEnable=" "$BT_CONF"; then
+            sudo sed -i 's/^#AutoEnable=.*/AutoEnable=false/' "$BT_CONF"
+        elif [[ -f "$BT_CONF" ]]; then
+            sudo sed -i '/^\[Policy\]/a AutoEnable=false' "$BT_CONF"
+        fi
+        sudo systemctl restart bluetooth.service
+
+        success "Bluetooth daemon running, radio off (power on with: bluetoothctl power on)."
     fi
 else
     warning "systemctl was not found; skipping NetworkManager/Bluetooth service setup."
