@@ -30,19 +30,6 @@ apply() {
     hyprctl eval "hl.monitor({ output = \"$out\", mode = \"$mode\", position = \"$pos\", scale = $scale, mirror = \"$mirror\" })" >/dev/null
 }
 
-# Direct scanout hands a fullscreen client's buffer straight to the KMS
-# plane on its source monitor, bypassing the compositor's render pass.
-# When that source is being mirrored to a second output, the mirror copy
-# ends up sampling a buffer being swapped on the source's own cadence
-# instead of a stable composited frame -- this shows up as thin
-# horizontal tearing lines on the real (non-mirror) monitor. Disabling
-# scanout only while a mirror pair is actually active avoids the
-# artifact without paying the scanout-performance cost in extend/single
-# layouts, where it can't happen.
-set_scanout() {
-    hyprctl eval "hl.config({ misc = { no_direct_scanout = $1 } })" >/dev/null
-}
-
 notify() {
     notify-send -a "Displays" "$1" "$2" 2>/dev/null || true
 }
@@ -57,12 +44,10 @@ PARK="100000x0"
 reset_pair() {
     apply "$MON" "preferred" "$PARK" "1" "none"
     apply "$LAPTOP" "preferred" "0x0" "$LAPTOP_SCALE" "none"
-    set_scanout false
 }
 
 laptop_leader() {
     apply "$LAPTOP" "preferred" "0x0" "$LAPTOP_SCALE" "none"
-    set_scanout false
 }
 
 # Must match brightness.sh's MIN: that script allows the panel down to 0%
@@ -100,9 +85,31 @@ mres="${best_mode%%@*}"
 mw="${mres%%x*}"
 mh="${mres##*x}"
 
-read -r lw lh < <(hyprctl monitors all -j | jq -r --arg m "$LAPTOP" --argjson s "$LAPTOP_SCALE" '
-  .[] | select(.name == $m) | "\((.width/$s)|floor) \((.height/$s)|floor)"
+read -r lw lh lhz < <(hyprctl monitors all -j | jq -r --arg m "$LAPTOP" --argjson s "$LAPTOP_SCALE" '
+  .[] | select(.name == $m) | "\((.width/$s)|floor) \((.height/$s)|floor) \(.refreshRate)"
 ')
+
+# When mirroring, MON must not run at its own max refresh rate: the
+# laptop panel is fixed at ~60Hz, and driving the pair at mismatched,
+# unsynchronized rates makes their atomic KMS commits collide on this
+# hardware (observed directly in Hyprland's log as a flood of "atomic
+# drm request: failed to commit: Device or resource busy" from
+# aquamarine right as the mirror engages) -- a failed commit leaves a
+# stale/partial frame on screen, which shows up as thin horizontal
+# tearing lines. Picking MON's native-resolution mode closest to the
+# panel's refresh rate keeps both CRTCs on compatible cadences. Extend
+# layouts keep using best_mode since each output there is independent
+# and this contention doesn't apply.
+mirror_mode=$(hyprctl monitors all -j | jq -r --arg m "$MON" --argjson lhz "$lhz" '
+  [ .[] | select(.name == $m) | .availableModes[]
+    | capture("(?<w>[0-9]+)x(?<h>[0-9]+)@(?<hz>[0-9.]+)Hz")
+    | {w: (.w|tonumber), h: (.h|tonumber), hz: (.hz|tonumber)} ]
+  | (max_by(.w).w) as $mw
+  | map(select(.w == $mw))
+  | min_by((.hz - $lhz) | fabs)
+  | "\(.w)x\(.h)@\(.hz)"
+')
+[ -z "$mirror_mode" ] && mirror_mode="$best_mode"
 
 reset_pair
 
@@ -119,15 +126,13 @@ case "$choice" in
                 # sharing 0x0, which is the overlap the compositor warns
                 # about. MON is still parked from reset_pair here.
                 apply "$LAPTOP" "preferred" "0x0" "$LAPTOP_SCALE" "$MON"
-                apply "$MON" "$best_mode" "0x0" "1" "none"
-                set_scanout true
-                notify "Mirroring" "Laptop mirrors $MON ($best_mode)"
+                apply "$MON" "$mirror_mode" "0x0" "1" "none"
+                notify "Mirroring" "Laptop mirrors $MON ($mirror_mode)"
                 ;;
             "Mirror laptop → monitor")
                 apply "$LAPTOP" "preferred" "0x0" "$LAPTOP_SCALE" "none"
-                apply "$MON" "$best_mode" "0x0" "1" "$LAPTOP"
-                set_scanout true
-                notify "Mirroring" "$MON mirrors laptop (panel refresh @ $best_mode)"
+                apply "$MON" "$mirror_mode" "0x0" "1" "$LAPTOP"
+                notify "Mirroring" "$MON mirrors laptop (panel refresh @ $mirror_mode)"
                 ;;
             *) exit 0 ;;
         esac
