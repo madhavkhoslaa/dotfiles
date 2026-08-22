@@ -30,6 +30,19 @@ apply() {
     hyprctl eval "hl.monitor({ output = \"$out\", mode = \"$mode\", position = \"$pos\", scale = $scale, mirror = \"$mirror\" })" >/dev/null
 }
 
+# Direct scanout hands a fullscreen client's buffer straight to the KMS
+# plane on its source monitor, bypassing the compositor's render pass.
+# When that source is being mirrored to a second output, the mirror copy
+# ends up sampling a buffer being swapped on the source's own cadence
+# instead of a stable composited frame -- this shows up as thin
+# horizontal tearing lines on the real (non-mirror) monitor. Disabling
+# scanout only while a mirror pair is actually active avoids the
+# artifact without paying the scanout-performance cost in extend/single
+# layouts, where it can't happen.
+set_scanout() {
+    hyprctl eval "hl.config({ misc = { no_direct_scanout = $1 } })" >/dev/null
+}
+
 notify() {
     notify-send -a "Displays" "$1" "$2" 2>/dev/null || true
 }
@@ -44,10 +57,12 @@ PARK="100000x0"
 reset_pair() {
     apply "$MON" "preferred" "$PARK" "1" "none"
     apply "$LAPTOP" "preferred" "0x0" "$LAPTOP_SCALE" "none"
+    set_scanout false
 }
 
 laptop_leader() {
     apply "$LAPTOP" "preferred" "0x0" "$LAPTOP_SCALE" "none"
+    set_scanout false
 }
 
 # Must match brightness.sh's MIN: that script allows the panel down to 0%
@@ -105,11 +120,13 @@ case "$choice" in
                 # about. MON is still parked from reset_pair here.
                 apply "$LAPTOP" "preferred" "0x0" "$LAPTOP_SCALE" "$MON"
                 apply "$MON" "$best_mode" "0x0" "1" "none"
+                set_scanout true
                 notify "Mirroring" "Laptop mirrors $MON ($best_mode)"
                 ;;
             "Mirror laptop → monitor")
                 apply "$LAPTOP" "preferred" "0x0" "$LAPTOP_SCALE" "none"
                 apply "$MON" "$best_mode" "0x0" "1" "$LAPTOP"
+                set_scanout true
                 notify "Mirroring" "$MON mirrors laptop (panel refresh @ $best_mode)"
                 ;;
             *) exit 0 ;;
